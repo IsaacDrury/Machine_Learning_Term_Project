@@ -391,6 +391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 737732134}
+  - component: {fileID: 737732135}
   m_Layer: 0
   m_Name: AsteroidField
   m_TagString: Untagged
@@ -413,6 +414,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &737732135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737732133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d358aa3bdb6378478171aa9c04cb494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroids:
+  - {fileID: 2215169933025033485, guid: 9e36dd0f64391004e9f28d2a97d9e1cd, type: 3}
+  - {fileID: 385720159238328323, guid: 4eb2358c74c8254409fba5ba9ca1ced2, type: 3}
+  - {fileID: 1999721185410643779, guid: 08fedc8cd5c0b8d408d68e25c27f1679, type: 3}
+  - {fileID: 252052612565392999, guid: 3c1ce63312f059d4aa4c5daf6d0b1ab9, type: 3}
+  - {fileID: 1556222198155797137, guid: 6f6a88091eb685744a6f66b4060c54ee, type: 3}
+  fieldTransform: {fileID: 737732134}
+  startPos: {x: 0, y: -500, z: 0}
+  destPos: {x: 200, y: -500, z: 200}
+  speed: 10
 --- !u!1 &811812775 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1395770118031141959, guid: bb6a0164d5b762846bf0e521d4b9f80c, type: 3}

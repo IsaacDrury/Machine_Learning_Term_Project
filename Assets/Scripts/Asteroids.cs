@@ -1,47 +1,130 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Asteroids : MonoBehaviour
 {
     //Asteroid prefabs
-    [SerializeField] private GameObject asteroid1;
-    [SerializeField] private GameObject asteroid2;
-    [SerializeField] private GameObject asteroid3;
-    [SerializeField] private GameObject asteroid4;
-    [SerializeField] private GameObject asteroid5;
+    [SerializeField] private GameObject[] asteroids;
 
-    //Start coordinates
-    [SerializeField] private int startX;
-    [SerializeField] private int startY;
-    [SerializeField] private int startZ;
+    //Transform of the asteroid field
+    [SerializeField] private Transform fieldTransform;
 
-    //Destination coordinates
-    [SerializeField] private int destX;
-    [SerializeField] private int destY;
-    [SerializeField] private int destZ;
-
-    //Other values
+    //Values for lerping the asteroid field
+    [SerializeField] private Vector3 startPos;
+    [SerializeField] private Vector3 destPos;
     [SerializeField] private int speed;
+
+    //Length of asteroids array
+    private int length;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        length = asteroids.Length;
+        transform.position = startPos;
+        RandomizeField();
+        StartCoroutine(Move());
     }
 
-    // Update is called once per frame
-    void Update()
+    // Generates a random field of astroids
+    private void RandomizeField()
     {
-        
-    }
+        int rand = 0;
+        int posX = 0;
+        int posY = 0;
+        int posZ = 0;
+        int rotX = 0;
+        int rotY = 0;
+        int rotZ = 0;
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                for (int k = 0; k < 10; k++)
+                {
+                    //Generate random position
+                    rand = Random.Range(10, 91);
+                    posX = i * 100 + rand;
+                    rand = Random.Range(10, 91);
+                    posY = j * 100 + rand;
+                    rand = Random.Range(10, 91);
+                    posZ = k * 100 + rand;
+                    Vector3 asteroidPos = new Vector3(posX, posY, posZ);
 
+                    //Generate random asteroid
+                    rand = Random.Range(0, length);
+                    GameObject asteroid = Instantiate(asteroids[rand], fieldTransform);
+                    asteroid.transform.localPosition = asteroidPos;
+
+                    //Determine rotation if any
+                    rand = Random.Range(0, 7);
+                    switch (rand)
+                    {
+                        case 0:
+                            rotX = Random.Range(-30, 31);
+                            rotY = 0;
+                            rotZ = 0;
+                            break;
+                        case 1:
+                            rotX = 0;
+                            rotY = Random.Range(-30, 31);
+                            rotZ = 0;
+                            break;
+                        case 2:
+                            rotX = 0;
+                            rotY = 0;
+                            rotZ = Random.Range(-30, 31);
+                            break;
+                        case 3:
+                            rotX = Random.Range(-30, 31);
+                            rotY = Random.Range(-30, 31);
+                            rotZ = 0;
+                            break;
+                        case 4:
+                            rotX = 0;
+                            rotY = Random.Range(-30, 31);
+                            rotZ = Random.Range(-30, 31);
+                            break;
+                        case 5:
+                            rotX = Random.Range(-30, 31);
+                            rotY = Random.Range(-30, 31);
+                            rotZ = Random.Range(-30, 31);
+                            break;
+                    }
+                    Vector3 asteroidRot = new Vector3(rotX, rotY, rotZ);
+                    if (asteroidRot != Vector3.zero)
+                    {
+                        //StartCoroutine(Rotate(asteroid, asteroidRot));
+                    }
+                }
+            }
+        }
+    }
+    // Moves the asteroid field across the play area and then destroys it
+    // Assumes that the start position, destination position, and speed are predetermined
     private IEnumerator Move()
     {
-        float start = Time.deltaTime;
-        Vector3 startPos = new Vector3(startX, startY, startZ);
-        Vector3 destPos = new Vector3(destX, destY, destZ);
         float totalDistance = Vector3.Distance(startPos, destPos);
+        float duration = totalDistance / speed;
+        float time = 0.0f;
 
+        while (time < (totalDistance / speed))
+        {
+            time += Time.deltaTime;
+            fieldTransform.position = Vector3.Lerp(startPos, destPos, time / duration);
+            yield return null;
+        }
+
+        Destroy(this.gameObject);
     }
 
+    // Rotates an asteroid
+    private IEnumerator Rotate(GameObject asteroid, Vector3 asteroidRot)
+    {
+        while (true)
+        {
+            asteroid.transform.Rotate(asteroidRot * Time.deltaTime);
+        }
+    }
 }
