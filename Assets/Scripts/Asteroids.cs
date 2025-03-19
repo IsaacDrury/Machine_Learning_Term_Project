@@ -30,6 +30,7 @@ public class Asteroids : MonoBehaviour
     // Generates a random field of astroids
     private void RandomizeField()
     {
+        // Vars that will be used repeatedly in the function
         int rand = 0;
         int posX = 0;
         int posY = 0;
@@ -37,6 +38,7 @@ public class Asteroids : MonoBehaviour
         int rotX = 0;
         int rotY = 0;
         int rotZ = 0;
+        // Generates asteroids in a 3D space (Currently 1000 asteroids)
         for (int i = 0; i < 10; i++)
         {
             for (int j = 0; j < 10; j++)
@@ -58,44 +60,44 @@ public class Asteroids : MonoBehaviour
                     asteroid.transform.localPosition = asteroidPos;
 
                     //Determine rotation if any
-                    rand = Random.Range(0, 7);
+                    rand = Random.Range(0, 6);
                     switch (rand)
                     {
                         case 0:
-                            rotX = Random.Range(-30, 31);
+                            rotX = Random.Range(-60, 61);
                             rotY = 0;
                             rotZ = 0;
                             break;
                         case 1:
                             rotX = 0;
-                            rotY = Random.Range(-30, 31);
+                            rotY = Random.Range(-60, 61);
                             rotZ = 0;
                             break;
                         case 2:
                             rotX = 0;
                             rotY = 0;
-                            rotZ = Random.Range(-30, 31);
-                            break;
+                            rotZ = Random.Range(-60, 61);
+                            break;      
                         case 3:
-                            rotX = Random.Range(-30, 31);
-                            rotY = Random.Range(-30, 31);
+                            rotX = Random.Range(-60, 61);
+                            rotY = Random.Range(-60, 61);
                             rotZ = 0;
                             break;
                         case 4:
                             rotX = 0;
-                            rotY = Random.Range(-30, 31);
-                            rotZ = Random.Range(-30, 31);
+                            rotY = Random.Range(-60, 61);
+                            rotZ = Random.Range(-60, 61);
                             break;
                         case 5:
-                            rotX = Random.Range(-30, 31);
-                            rotY = Random.Range(-30, 31);
-                            rotZ = Random.Range(-30, 31);
+                            rotX = Random.Range(-60, 61);
+                            rotY = Random.Range(-60, 61);
+                            rotZ = Random.Range(-60, 61);
                             break;
                     }
                     Vector3 asteroidRot = new Vector3(rotX, rotY, rotZ);
                     if (asteroidRot != Vector3.zero)
                     {
-                        //StartCoroutine(Rotate(asteroid, asteroidRot));
+                        asteroid.GetComponent<AsteroidRotation>().SetRotation(asteroidRot);
                     }
                 }
             }
@@ -117,14 +119,5 @@ public class Asteroids : MonoBehaviour
         }
 
         Destroy(this.gameObject);
-    }
-
-    // Rotates an asteroid
-    private IEnumerator Rotate(GameObject asteroid, Vector3 asteroidRot)
-    {
-        while (true)
-        {
-            asteroid.transform.Rotate(asteroidRot * Time.deltaTime);
-        }
     }
 }
