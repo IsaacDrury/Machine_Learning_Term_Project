@@ -4,28 +4,18 @@ using UnityEngine.UIElements;
 
 public class Asteroids : MonoBehaviour
 {
-    //Asteroid prefabs
+    // Asteroid prefabs
     [SerializeField] private GameObject[] asteroids;
-
-    //Transform of the asteroid field
+    // Transform of the asteroid field
     [SerializeField] private Transform fieldTransform;
 
-    //Values for lerping the asteroid field
+    // Values for lerping the asteroid field
     [SerializeField] private Vector3 startPos;
     [SerializeField] private Vector3 destPos;
     [SerializeField] private int speed;
 
-    //Length of asteroids array
+    // Length of asteroids array
     private int length;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        length = asteroids.Length;
-        transform.position = startPos;
-        RandomizeField();
-        StartCoroutine(Move());
-    }
 
     // Generates a random field of astroids
     private void RandomizeField()
@@ -45,7 +35,7 @@ public class Asteroids : MonoBehaviour
             {
                 for (int k = 0; k < 10; k++)
                 {
-                    //Generate random position
+                    // Generate random position
                     rand = Random.Range(10, 91);
                     posX = i * 100 + rand;
                     rand = Random.Range(10, 91);
@@ -54,12 +44,12 @@ public class Asteroids : MonoBehaviour
                     posZ = k * 100 + rand;
                     Vector3 asteroidPos = new Vector3(posX, posY, posZ);
 
-                    //Generate random asteroid
+                    // Generate random asteroid
                     rand = Random.Range(0, length);
                     GameObject asteroid = Instantiate(asteroids[rand], fieldTransform);
                     asteroid.transform.localPosition = asteroidPos;
 
-                    //Determine rotation if any
+                    // Determine and apply rotation
                     rand = Random.Range(0, 6);
                     switch (rand)
                     {
@@ -119,5 +109,17 @@ public class Asteroids : MonoBehaviour
         }
 
         Destroy(this.gameObject);
+    }
+
+    // Sets initial parameters of the fields behaviour and calls other functions
+    public void InitializeField(Vector3 startVector, Vector3 endVector, int fieldSpeed)
+    {
+        startPos = startVector;
+        destPos = endVector;
+        speed = fieldSpeed;
+        length = asteroids.Length;
+        transform.position = startPos;
+        RandomizeField();
+        StartCoroutine(Move());
     }
 }
