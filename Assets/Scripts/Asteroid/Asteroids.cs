@@ -105,7 +105,7 @@ public class Asteroids : MonoBehaviour
         while (time < (totalDistance / speed))
         {
             time += Time.deltaTime;
-            fieldTransform.position = Vector3.Lerp(startPos, destPos, time / duration);
+            fieldTransform.localPosition = Vector3.Lerp(startPos, destPos, time / duration);
             yield return null;
         }
 
