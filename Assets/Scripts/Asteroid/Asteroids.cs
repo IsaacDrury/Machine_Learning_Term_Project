@@ -29,19 +29,19 @@ public class Asteroids : MonoBehaviour
         int rotY = 0;
         int rotZ = 0;
         // Generates asteroids in a 3D space (Currently 1000 asteroids)
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 4; i++)
         {
-            for (int j = 0; j < 10; j++)
+            for (int j = 0; j < 4; j++)
             {
-                for (int k = 0; k < 10; k++)
+                for (int k = 0; k <4; k++)
                 {
                     // Generate random position
-                    rand = Random.Range(10, 91);
-                    posX = i * 100 + rand;
-                    rand = Random.Range(10, 91);
-                    posY = j * 100 + rand;
-                    rand = Random.Range(10, 91);
-                    posZ = k * 100 + rand;
+                    rand = Random.Range(10, 241);
+                    posX = i * 250 + rand;
+                    rand = Random.Range(10, 241);
+                    posY = j * 250 + rand;
+                    rand = Random.Range(10, 241);
+                    posZ = k * 250 + rand;
                     Vector3 asteroidPos = new Vector3(posX, posY, posZ);
 
                     // Generate random asteroid
@@ -100,6 +100,7 @@ public class Asteroids : MonoBehaviour
         float totalDistance = Vector3.Distance(startPos, destPos);
         float duration = totalDistance / speed;
         float time = 0.0f;
+        transform.LookAt(destPos);
 
         while (time < (totalDistance / speed))
         {

@@ -24,27 +24,35 @@ public class AsteroidFieldGeneration : MonoBehaviour
         switch (dir)
         {
             case 0:
-                x = 1000;
-                z = Random.Range(-500, 500);
+                z = Random.Range(250, 750);
+                y = Random.Range(-750, -250);
+                startPos = new Vector3(500, y, 500 - (z - 500));
+                y = y + 500;
+                endPos = new Vector3(-1500, -500 - y, 500 - (z - 500));
                 break;
             case 1:
-                x = -1000;
-                z = Random.Range(-500, 500);
+                z = Random.Range(250, 750);
+                y = Random.Range(-750, -250);
+                startPos = new Vector3(-1500, y, z);
+                y = y + 500;
+                endPos = new Vector3(500, -500 - y, z);
                 break;
             case 2:
-                z = 1000;
-                x = Random.Range(-500, 500);
+                x = Random.Range(250, 750);
+                y = Random.Range(-750, -250);
+                startPos = new Vector3(x, y, 500);
+                y = y + 500;
+                endPos = new Vector3(x, -500 - y, -1500);
                 break;
             case 3:
-                z = -1000;
-                x = Random.Range(-500, 500);
-                break;
+                x = Random.Range(250, 750);
                 y = Random.Range(-750, -250);
+                startPos = new Vector3(500 - (x - 500), y, -1500);
+                y = y + 500;
+                endPos = new Vector3(500 - (x - 500), - 500 - y, 500);
+                break;
         }
-        startPos = new Vector3(x, y, z);
-        y = y + 500;
-        endPos = new Vector3(-x, 500 - y, -z);
-        speed = Random.Range(5, 30);
+        speed = Random.Range(10, 50);
     }
 
     private IEnumerator ContinuousGeneration()
