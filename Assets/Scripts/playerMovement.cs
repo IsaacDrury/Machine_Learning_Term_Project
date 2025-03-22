@@ -45,17 +45,24 @@ public class playerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Rotation inputs (i.e. input values 0 and 1 for the ai's input buffer)
-        if (movementX != 0 && movementX <= 1 && movementX >= -1) {
+        if (movementX <= 1 && movementX >= -1) {
             momentumX = movementX;
             this.transform.RotateAround(this.transform.position, this.transform.up, momentumX * angle * Time.deltaTime);
         }
-        if (movementZ != 0 && movementZ <= 1 && movementZ >= -1) {
+        if (movementZ <= 1 && movementZ >= -1) {
             momentumZ = movementZ;
             this.transform.RotateAround(this.transform.position, this.transform.right, momentumZ * angle * Time.deltaTime);
         }
-        UnityEngine.Vector3 vector = new UnityEngine.Vector3(0.0f, 0.0f, thrust);
+        UnityEngine.Vector3 vector = new UnityEngine.Vector3(0.0f, 0.0f, thrust * speed * Time.deltaTime);
         //Constant Thrust
-        this.transform.forward = vector * speed * Time.deltaTime;
+        // this.transform.forward = vector * speed * Time.deltaTime;
+
+        // The neural net (i.e. policy) has generated output
+		// Vector3 controlSignal = Vector3.zero;
+        // vector = controlSignal.x;
+		// float angle = actionBuffers.ContinuousActions[1];
+
+		rBdy.AddRelativeForce(vector);
 
     }
 }
