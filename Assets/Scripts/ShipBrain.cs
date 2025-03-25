@@ -19,18 +19,19 @@ public class ShipBrain : Agent
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Obstacle"))
+        if (other.CompareTag("Obstacle") || other.CompareTag("Border"))
         {
             // Add a negative reward for hitting big space rock
-            AddReward(-1.0f);
+            AddReward(-6.0f);
 
             // Log to console for debugging
-            Debug.Log("Asteroid Hit Penalty: " + -1.0f);
+            Debug.Log("Asteroid / Border Hit Penalty: " + -6.0f);
+            EndEpisode();
         }
     }
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-        AddReward(0.001f);
+        AddReward(0.0001f);
         float pitch = actionBuffers.ContinuousActions[0];
         float yaw = actionBuffers.ContinuousActions[1];
         movementScript.ApplyMovement(pitch, yaw);
