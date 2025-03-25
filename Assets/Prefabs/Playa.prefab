@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941f1b06b7cda91499009199558701f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angle: 10
+  angle: 90
   thrust: 5
-  speed: 10
+  speed: 50
   rBdy: {fileID: 4870110314359052489}

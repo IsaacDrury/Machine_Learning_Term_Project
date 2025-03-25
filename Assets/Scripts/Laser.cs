@@ -5,8 +5,10 @@ namespace Assets.Scripts
 {
     public class Laser : MonoBehaviour
     {
+        // Explosion prefabs
         [SerializeField] private GameObject laserExplosion;
-        [SerializeField] private GameObject shipExplosion;
+        //[SerializeField] private GameObject shipExplosion;
+        // Laser speed
         [SerializeField] private int speed;
 
         private Transform laserTransform;
@@ -25,7 +27,7 @@ namespace Assets.Scripts
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.tag == "agent")
+            if (collision.gameObject.tag == "Agent")
             {
                 Instantiate(laserExplosion, laserTransform.position, laserTransform.rotation);
                 //Instantiate(shipExplosion, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
@@ -37,13 +39,6 @@ namespace Assets.Scripts
                 Instantiate(laserExplosion, laserTransform.position, laserTransform.rotation);
                 Destroy(this.gameObject);
             }
-        }
-
-        // Initializes rotation and velocity of a laser shot from a ship
-        // Uses a reference to the ship's transform.
-        public void InitializeLazer(Transform parentTransform)
-        {
-            laserTransform.rotation = parentTransform.rotation;
         }
     }
 }

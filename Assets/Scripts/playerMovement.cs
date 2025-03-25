@@ -5,12 +5,12 @@ using UnityEngine.InputSystem;
 
 public class playerMovement : MonoBehaviour
 {
-    private float movementX;
-    private float movementZ;
     public float angle = 90.0f;
-    public float thrust = 5.0f;
     public float speed = 50;
     public Rigidbody rBdy;
+
+    private float movementX;
+    private float movementZ;
 
     //Get player input
     void OnMove(InputValue movementValue) {
