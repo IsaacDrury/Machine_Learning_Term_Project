@@ -103,6 +103,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5296442698276390248}
     m_Modifications:
+    - target: {fileID: 829768616849065292, guid: abe678dd5f523774289e3f10d3f676c8, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026833464175449226, guid: abe678dd5f523774289e3f10d3f676c8, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367889231679426320, guid: abe678dd5f523774289e3f10d3f676c8, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 3202076772848774165, guid: abe678dd5f523774289e3f10d3f676c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -143,9 +155,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5888032652485798307, guid: abe678dd5f523774289e3f10d3f676c8, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927121753314532651, guid: abe678dd5f523774289e3f10d3f676c8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7038247645276268828, guid: abe678dd5f523774289e3f10d3f676c8, type: 3}
       propertyPath: m_Name
       value: WorldBorder
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038247645276268828, guid: abe678dd5f523774289e3f10d3f676c8, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711314748665710859, guid: abe678dd5f523774289e3f10d3f676c8, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997309223135647142, guid: abe678dd5f523774289e3f10d3f676c8, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
