@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9194471323622644282
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1813269337540728079, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      propertyPath: m_Name
+      value: Playa Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373060204630480268, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5377407
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373060204630480268, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5076457
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373060204630480268, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.72283053
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373060204630480268, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373060204630480268, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373060204630480268, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373060204630480268, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373060204630480268, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373060204630480268, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373060204630480268, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2582185638415519883, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+    - {fileID: 1598161472539371393, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1813269337540728079, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2005407417400029860}
+    - targetCorrespondingSourceObject: {fileID: 1813269337540728079, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3104289018699943929}
+    - targetCorrespondingSourceObject: {fileID: 1813269337540728079, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8156215264331822273}
+    - targetCorrespondingSourceObject: {fileID: 1813269337540728079, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5202851220679154982}
+  m_SourcePrefab: {fileID: 100100000, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+--- !u!54 &4327758527316443891 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4870110314359052489, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+  m_PrefabInstance: {fileID: 9194471323622644282}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7400351172134047541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1813269337540728079, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+  m_PrefabInstance: {fileID: 9194471323622644282}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2005407417400029860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7400351172134047541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff807559fb38ae4eabd56f6db25f444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 90
+  speed: 50
+  rBdy: {fileID: 4327758527316443891}
+--- !u!114 &3104289018699943929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7400351172134047541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604c7d9f29717a54e8e6bcf8dfc55743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
+--- !u!114 &8156215264331822273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7400351172134047541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 5
+  DecisionStep: 0
+  TakeActionsBetweenDecisions: 1
+--- !u!114 &5202851220679154982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7400351172134047541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1c4e0b1822b495aa52bc52839ecb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BrainParameters:
+    VectorObservationSize: 1
+    NumStackedVectorObservations: 1
+    m_ActionSpec:
+      m_NumContinuousActions: 2
+      BranchSizes: 01000000
+    VectorActionSize: 
+    VectorActionDescriptions: []
+    VectorActionSpaceType: 0
+    hasUpgradedBrainParametersWithActionSpec: 1
+  m_Model: {fileID: 0}
+  m_InferenceDevice: 0
+  m_BehaviorType: 1
+  m_BehaviorName: My Behavior
+  TeamId: 0
+  m_UseChildSensors: 1
+  m_UseChildActuators: 1
+  m_DeterministicInference: 0
+  m_ObservableAttributeHandling: 0
