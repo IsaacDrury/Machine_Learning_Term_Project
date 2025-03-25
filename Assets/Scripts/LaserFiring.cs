@@ -20,12 +20,6 @@ namespace Assets.Scripts
             inCooldown = false;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         // Reenable firing
         private void ExitCooldown()
         {

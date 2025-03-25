@@ -24,19 +24,5 @@ public class playerMovement : MonoBehaviour
         //Rotate and move the ship
         this.transform.Rotate(new UnityEngine.Vector3(movementX, 0, -movementZ), angle * Time.deltaTime);
         rBdy.linearVelocity = this.transform.forward * speed;
-       
-
-        // Experimental ai input code
-
-        /*
-        this.transform.forward = vector * speed * Time.deltaTime;
-
-        // The neural net (i.e. policy) has generated output
-		Vector3 controlSignal = Vector3.zero;
-        vector = controlSignal.x;
-		float angle = actionBuffers.ContinuousActions[1];
-
-		arBdy.AddRelativeForce(vector);
-        */
     }
 }
