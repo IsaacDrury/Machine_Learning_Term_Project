@@ -35,7 +35,7 @@ public class ShipBrain : Agent
         float pitch = actionBuffers.ContinuousActions[0];
         float yaw = actionBuffers.ContinuousActions[1];
         movementScript.ApplyMovement(pitch, yaw);
-        if (stepCount >= maxSteps)
+        if (stepCount == maxSteps)
         {
             EndEpisode();
         }
