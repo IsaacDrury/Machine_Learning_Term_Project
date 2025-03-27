@@ -38,7 +38,7 @@ public class AsteroidFieldGeneration : MonoBehaviour
                 endPos = new Vector3(-500 - (x + 500), - 500 - y, 500);
                 break;
         }
-        speed = Random.Range(10, 50);
+        speed = Random.Range(10, 20);
     }
 
     private IEnumerator ContinuousGeneration()

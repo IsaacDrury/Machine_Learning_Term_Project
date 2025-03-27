@@ -29,19 +29,19 @@ public class Asteroids : MonoBehaviour
         int rotY = 0;
         int rotZ = 0;
         // Generates asteroids in a 3D space (Currently 1000 asteroids)
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 2; i++)
         {
-            for (int j = 0; j < 4; j++)
+            for (int j = 0; j < 2; j++)
             {
-                for (int k = 0; k <4; k++)
+                for (int k = 0; k < 2; k++)
                 {
                     // Generate random position
-                    rand = Random.Range(10, 241);
-                    posX = i * 250 + rand;
-                    rand = Random.Range(10, 241);
-                    posY = j * 250 + rand;
-                    rand = Random.Range(10, 241);
-                    posZ = k * 250 + rand;
+                    rand = Random.Range(10, 491);
+                    posX = i * 500 + rand;
+                    rand = Random.Range(10, 491);
+                    posY = j * 500 + rand;
+                    rand = Random.Range(10, 491);
+                    posZ = k * 500 + rand;
                     Vector3 asteroidPos = new Vector3(posX, posY, posZ);
 
                     // Generate random asteroid

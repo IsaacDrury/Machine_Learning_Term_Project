@@ -440,6 +440,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agent
       objectReference: {fileID: 0}
+    - target: {fileID: 1813269337540728079, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
+      propertyPath: m_TagString
+      value: Agent
+      objectReference: {fileID: 0}
     - target: {fileID: 7373060204630480268, guid: c4f81dc33bf4f08478e64acf901b1d54, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

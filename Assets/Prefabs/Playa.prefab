@@ -181,6 +181,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 90
-  thrust: 5
   speed: 50
   rBdy: {fileID: 4870110314359052489}
