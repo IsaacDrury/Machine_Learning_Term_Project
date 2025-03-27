@@ -532,6 +532,39 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e75be3c48b12afa4ca062383a1b2aa08, type: 3}
+--- !u!1 &1605156821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7400351172134047541, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
+  m_PrefabInstance: {fileID: 3136470796996681828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1605156823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605156821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: ShootingSensor
+  m_DetectableTags: []
+  m_RaysPerDirection: 1
+  m_MaxRayDegrees: 0
+  m_SphereCastRadius: 0.5
+  m_RayLength: 100
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  m_AlternatingRayOrder: 1
+  m_UseBatchedRaycasts: 0
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 0.82210237, g: 0.14957382, b: 0.75174886, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
 --- !u!1001 &3136470796996681828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -542,15 +575,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1858594412902911926, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -114
       objectReference: {fileID: 0}
     - target: {fileID: 1858594412902911926, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 12.9
       objectReference: {fileID: 0}
     - target: {fileID: 1858594412902911926, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 1858594412902911926, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
       propertyPath: m_LocalRotation.w
@@ -581,6 +614,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1928252062384553700, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
+      propertyPath: m_RayLength
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928252062384553700, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
+      propertyPath: m_RaysPerDirection
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928252062384553700, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
       propertyPath: m_DetectableTags.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -589,6 +630,14 @@ PrefabInstance:
       value: Border
       objectReference: {fileID: 0}
     - target: {fileID: 3669430325037255492, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
+      propertyPath: m_RayLength
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669430325037255492, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
+      propertyPath: m_RaysPerDirection
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669430325037255492, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
       propertyPath: m_DetectableTags.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -596,6 +645,18 @@ PrefabInstance:
       propertyPath: 'm_DetectableTags.Array.data[1]'
       value: Border
       objectReference: {fileID: 0}
+    - target: {fileID: 5202851220679154982, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 16d043e6f564728409dc8197080043ef, type: 3}
+    - target: {fileID: 6610776501653276790, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
+      propertyPath: m_RayLength
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610776501653276790, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
+      propertyPath: m_RaysPerDirection
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6610776501653276790, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
       propertyPath: m_DetectableTags.Array.size
       value: 2
@@ -605,12 +666,28 @@ PrefabInstance:
       value: Border
       objectReference: {fileID: 0}
     - target: {fileID: 6726048288756515672, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
+      propertyPath: m_RayLength
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726048288756515672, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
+      propertyPath: m_RaysPerDirection
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726048288756515672, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
       propertyPath: m_DetectableTags.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6726048288756515672, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
       propertyPath: 'm_DetectableTags.Array.data[1]'
       value: Border
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340272034240499443, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
+      propertyPath: m_RayLength
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340272034240499443, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
+      propertyPath: m_RaysPerDirection
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7340272034240499443, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
       propertyPath: m_DetectableTags.Array.size
@@ -627,7 +704,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7400351172134047541, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
+      insertIndex: 13
+      addedObject: {fileID: 1605156823}
   m_SourcePrefab: {fileID: 100100000, guid: 9ef1456ab5a31a148ba026e7aac93348, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
