@@ -22,7 +22,7 @@ namespace Assets.Scripts
 
         private void FixedUpdate()
         {
-            rb.linearVelocity = laserTransform.forward * speed;
+            rb.linearVelocity = laserTransform.up * speed;
         }
 
         private void OnCollisionEnter(Collision collision)

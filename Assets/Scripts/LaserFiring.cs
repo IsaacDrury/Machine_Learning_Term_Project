@@ -1,6 +1,8 @@
 ﻿using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 namespace Assets.Scripts
 {
@@ -8,6 +10,8 @@ namespace Assets.Scripts
     {
         // Laser Prefab
         [SerializeField] private GameObject laser;
+        [SerializeField] private AudioSource sound;
+        [SerializeField] private AudioClip[] clips;
         // Transform that will be used to instantiate the laser at the appropriate spot
         [SerializeField] private Transform firingPoint;
         // Delay between lasers fired
@@ -16,6 +20,7 @@ namespace Assets.Scripts
         private Ray ray;
         private RaycastHit hit;
         private bool inCooldown;
+        private int index;
 
         private void Awake()
         {
@@ -25,10 +30,15 @@ namespace Assets.Scripts
         private void Update()
         {
             ray = new Ray(firingPoint.position, firingPoint.forward);
+            Debug.DrawRay(ray.origin, ray.direction * 500);
             Physics.Raycast(ray, out hit);
             if (hit.collider.tag == "Agent" && hit.distance < 500)
             {
-                FireLaser();
+                //Add reward here
+                if (!inCooldown)
+                {
+                    FireLaser();
+                }
             }
         }
 
@@ -41,8 +51,12 @@ namespace Assets.Scripts
         // Instantiate laser
         public void FireLaser()
         {
+            index = Random.Range(0, clips.Length);
+            sound.clip = clips[index];
+            sound.Play();
             inCooldown = true;
-            Instantiate(laser, firingPoint.position, firingPoint.rotation);
+            GameObject laserProjectile = Instantiate(laser, firingPoint.position, firingPoint.rotation);
+            laserProjectile.transform.Rotate(new UnityEngine.Vector3(1, 0, 0), 90);
             Invoke("ExitCooldown", delay);
         }
     }

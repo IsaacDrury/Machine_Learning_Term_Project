@@ -5,6 +5,7 @@ using Unity.MLAgents.Actuators;
 
 public class ShipBrain : Agent
 {
+    [SerializeField] private Vector3 startingPosition;
     private agentMovement movementScript;
     public float maxSteps = 50000f;
     private float stepCount;
@@ -15,11 +16,11 @@ public class ShipBrain : Agent
     }
     public override void OnEpisodeBegin()
     {
-        transform.position = new Vector3(0, 0, 0);
+        transform.position = startingPosition;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Obstacle") || other.CompareTag("Border"))
+        if (other.CompareTag("Obstacle"))
         {
             // Add a negative reward for hitting big space rock
             AddReward(-6.0f);
