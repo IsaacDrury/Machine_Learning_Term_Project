@@ -24,14 +24,11 @@ namespace Assets.Scripts
 
         private void Update()
         {
-            if (this.gameObject.tag != "Player")
+            ray = new Ray(firingPoint.position, firingPoint.forward);
+            Physics.Raycast(ray, out hit);
+            if (hit.collider.tag == "Agent" && hit.distance < 500)
             {
-                ray = new Ray(firingPoint.position, firingPoint.forward);
-                Physics.Raycast(ray, out hit);
-                if (hit.collider.tag == "Agent" && hit.distance < 500)
-                {
-                    FireLaser();
-                }
+                FireLaser();
             }
         }
 
@@ -39,15 +36,6 @@ namespace Assets.Scripts
         private void ExitCooldown()
         {
             inCooldown = false;
-        }
-
-        // Firing input from the player
-        private void OnAttack(InputValue val)
-        {
-            if (!inCooldown) 
-            {
-                FireLaser();
-            }
         }
 
         // Instantiate laser
