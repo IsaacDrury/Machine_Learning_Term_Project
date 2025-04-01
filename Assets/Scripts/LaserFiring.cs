@@ -13,11 +13,26 @@ namespace Assets.Scripts
         // Delay between lasers fired
         [SerializeField] private float delay;
 
+        private Ray ray;
+        private RaycastHit hit;
         private bool inCooldown;
 
         private void Awake()
         {
             inCooldown = false;
+        }
+
+        private void Update()
+        {
+            if (this.gameObject.tag != "Player")
+            {
+                ray = new Ray(firingPoint.position, firingPoint.forward);
+                Physics.Raycast(ray, out hit);
+                if (hit.collider.tag == "Agent" && hit.distance < 500)
+                {
+                    FireLaser();
+                }
+            }
         }
 
         // Reenable firing
