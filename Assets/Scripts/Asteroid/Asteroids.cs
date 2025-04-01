@@ -28,12 +28,12 @@ public class Asteroids : MonoBehaviour
         int rotX = 0;
         int rotY = 0;
         int rotZ = 0;
-        // Generates asteroids in a 3D space (Currently 1000 asteroids)
+        // Generates asteroids in a 3D space (Currently 32 asteroids)
         for (int i = 0; i < 2; i++)
         {
-            for (int j = 0; j < 2; j++)
+            for (int j = 0; j < 4; j++)
             {
-                for (int k = 0; k < 2; k++)
+                for (int k = 0; k < 4; k++)
                 {
                     // Generate random position
                     rand = Random.Range(10, 491);

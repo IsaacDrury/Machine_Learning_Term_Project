@@ -1,3 +1,4 @@
+using Google.Protobuf.WellKnownTypes;
 using System.Collections;
 using UnityEngine;
 
@@ -17,34 +18,16 @@ public class AsteroidFieldGeneration : MonoBehaviour
 
     public void GenerateFieldParams()
     {
-        int dir = Random.Range(0, 2);
-        int x = 0;
-        int y = -500;
-        int z = 0;
-        switch (dir)
-        {
-            case 0:
-                z = Random.Range(250, 750);
-                y = Random.Range(-750, -250);
-                startPos = new Vector3(-1500, y, z);
-                y = y + 500;
-                endPos = new Vector3(500, -500 - y, 500 - (z - 500));
-                break;
-            case 1:
-                x = Random.Range(-750, -250);
-                y = Random.Range(-750, -250);
-                startPos = new Vector3(x, y, -1500);
-                y = y + 500;
-                endPos = new Vector3(-500 - (x + 500), - 500 - y, 500);
-                break;
-        }
-        speed = Random.Range(10, 20);
+        startPos = new Vector3(-3000, -1000, 500);
+        endPos = new Vector3(1000, -1000, 500);
+        speed = Random.Range(10, 25);
     }
 
     private IEnumerator ContinuousGeneration()
     {
+        InitialField();
         GenerateField();
-        float time = 1000.0f / speed;
+        float time = 2000.0f / speed;
         while (true) 
         { 
             yield return new WaitForSeconds(time);
@@ -57,5 +40,21 @@ public class AsteroidFieldGeneration : MonoBehaviour
         GameObject field = Instantiate(asteroidField, generatorTransform);
         field.transform.localPosition = startPos;
         field.GetComponent<Asteroids>().InitializeField(startPos, endPos, speed);
+    }
+
+    private void InitialField()
+    {
+        GameObject field = Instantiate(asteroidField, generatorTransform);
+        field.transform.localPosition = new Vector3(startPos.x + 2000, startPos.y, startPos.z);
+        field.GetComponent<Asteroids>().InitializeField(field.transform.localPosition, endPos, speed);
+    }
+
+    private void ClearFields()
+    {
+        GameObject[] fields = GetComponentsInChildren<GameObject>();
+        foreach (GameObject field in fields)
+        {
+            Destroy(field);
+        }
     }
 }

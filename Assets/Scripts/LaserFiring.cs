@@ -12,9 +12,7 @@ namespace Assets.Scripts
         [SerializeField] private GameObject laser;
         [SerializeField] private AudioSource sound;
         [SerializeField] private AudioClip[] clips;
-        // Transform that will be used to instantiate the laser at the appropriate spot
         [SerializeField] private Transform firingPoint;
-        // Delay between lasers fired
         [SerializeField] private float delay;
 
         private Ray ray;
