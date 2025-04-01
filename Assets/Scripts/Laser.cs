@@ -16,6 +16,8 @@ namespace Assets.Scripts
 
         private void Awake()
         {
+            this.GetComponent<Collider>().enabled = false;
+            Invoke("ReEnableCollider", 0.1f);
             laserTransform = this.transform;
             rb = this.GetComponent<Rigidbody>();
         }
@@ -39,6 +41,11 @@ namespace Assets.Scripts
                 Instantiate(laserExplosion, laserTransform.position, laserTransform.rotation);
                 Destroy(this.gameObject);
             }
+        }
+
+        private void ReEnableCollider()
+        {
+            this.GetComponent<Collider>().enabled = true;
         }
     }
 }
