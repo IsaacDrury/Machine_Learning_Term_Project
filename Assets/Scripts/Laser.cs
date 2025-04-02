@@ -27,12 +27,12 @@ namespace Assets.Scripts
             rb.linearVelocity = laserTransform.up * speed;
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider collision)
         {
             if (collision.gameObject.tag == "Agent")
             {
                 Instantiate(laserExplosion, laserTransform.position, laserTransform.rotation);
-                //Instantiate(shipExplosion, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+                //Subtract health from ship
                 Destroy(this.gameObject);
 
             }
