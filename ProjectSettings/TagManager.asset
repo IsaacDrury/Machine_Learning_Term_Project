@@ -8,6 +8,8 @@ TagManager:
   - Agent
   - Border
   - Laser
+  - Team1
+  - Team2
   layers:
   - Default
   - TransparentFX
