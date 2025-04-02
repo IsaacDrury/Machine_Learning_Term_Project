@@ -44,10 +44,8 @@ public class ShipBrain : Agent
     }
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        /*
         var continuousActionsOut = actionsOut.ContinuousActions;
         continuousActionsOut[0] = Input.GetAxis("Vertical");   // Pitch (up/down)
         continuousActionsOut[1] = Input.GetAxis("Horizontal"); // Yaw (left/right)
-        */
     }
 }
