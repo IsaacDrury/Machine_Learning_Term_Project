@@ -8,14 +8,16 @@ TagManager:
   - Agent
   - Border
   - Laser
+  - Team 1
+  - Team 2
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ship1
   - Water
   - UI
-  - 
+  - Ship2
   - 
   - 
   - 

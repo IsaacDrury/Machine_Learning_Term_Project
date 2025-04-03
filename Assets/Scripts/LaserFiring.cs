@@ -19,10 +19,12 @@ namespace Assets.Scripts
         private RaycastHit hit;
         private bool inCooldown;
         private int index;
+        private ShipBrain agent;
 
         private void Awake()
         {
             inCooldown = false;
+            agent = GetComponent<ShipBrain>();
         }
 
         private void Update()
@@ -31,10 +33,14 @@ namespace Assets.Scripts
             Debug.DrawRay(ray.origin, ray.direction * 500);
             Physics.Raycast(ray, out hit);
             if (hit.collider.tag == "Agent" && hit.distance < 500)
+
             {
                 //Add reward here
                 if (!inCooldown)
                 {
+                    agent.AddReward(2.0f);
+                    Debug.LogWarning("Firing Laser");
+
                     FireLaser();
                 }
             }
@@ -55,6 +61,8 @@ namespace Assets.Scripts
             inCooldown = true;
             GameObject laserProjectile = Instantiate(laser, firingPoint.position, firingPoint.rotation);
             laserProjectile.transform.Rotate(new UnityEngine.Vector3(1, 0, 0), 90);
+            Laser laserScript = laserProjectile.GetComponent<Laser>();
+            laserScript.SetAgents(agent);
             Invoke("ExitCooldown", delay);
         }
     }

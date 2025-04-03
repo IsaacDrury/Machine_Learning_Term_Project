@@ -13,6 +13,7 @@ namespace Assets.Scripts
 
         private Transform laserTransform;
         private Rigidbody rb;
+        private ShipBrain parentAgent;
 
         private void Awake()
         {
@@ -31,6 +32,8 @@ namespace Assets.Scripts
         {
             if (collision.gameObject.tag == "Agent")
             {
+                parentAgent.AddReward(5.0f);
+                Debug.LogWarning("Ship Hit With Laser");
                 Instantiate(laserExplosion, laserTransform.position, laserTransform.rotation);
                 //Subtract health from ship
                 Destroy(this.gameObject);
@@ -46,6 +49,11 @@ namespace Assets.Scripts
         private void ReEnableCollider()
         {
             this.GetComponent<Collider>().enabled = true;
+        }
+
+        public void SetAgents(ShipBrain agent)
+        {
+            parentAgent = agent;
         }
     }
 }

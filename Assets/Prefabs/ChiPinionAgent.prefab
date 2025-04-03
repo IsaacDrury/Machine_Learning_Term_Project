@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1430352406489968130}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FiringPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1959269110107563064}
   - component: {fileID: 5791456088465871232}
   - component: {fileID: 6602487846424967774}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AgentCam
   m_TagString: Agent
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -22.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_LocalPosition.y
@@ -186,7 +186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -8.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_LocalRotation.w
@@ -268,9 +268,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 287248630671582699, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_Name
       value: ChiPinionAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_TagString
@@ -311,6 +319,14 @@ PrefabInstance:
     - target: {fileID: 1129603032752897145, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002743721439038197, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3198896233827727512, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -438,7 +454,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -641,6 +657,7 @@ MonoBehaviour:
   MaxStep: 0
   startingPosition: {x: 0, y: 0, z: 0}
   maxSteps: 50000
+  sensorFront: {fileID: 6644211420981071278}
 --- !u!114 &4170402062838685371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,8 +697,8 @@ MonoBehaviour:
     hasUpgradedBrainParametersWithActionSpec: 1
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
-  m_BehaviorType: 2
-  m_BehaviorName: My Behavior
+  m_BehaviorType: 0
+  m_BehaviorName: ShipBrain
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -702,13 +719,15 @@ MonoBehaviour:
   m_SensorName: Sensor0Deg
   m_DetectableTags:
   - Obstacle
+  - Laser
+  - Agent
   m_RaysPerDirection: 6
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
-  m_RayLength: 100
+  m_RayLength: 1000
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967291
+    m_Bits: 4294967283
   m_ObservationStacks: 1
   m_AlternatingRayOrder: 1
   m_UseBatchedRaycasts: 0
@@ -728,16 +747,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SensorName: Sensor90Deg
+  m_SensorName: Sensor180Deg
   m_DetectableTags:
   - Obstacle
+  - Laser
+  - Agent
   m_RaysPerDirection: 6
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
-  m_RayLength: 50
+  m_RayLength: 1000
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967291
+    m_Bits: 4294967283
+  m_ObservationStacks: 1
+  m_AlternatingRayOrder: 1
+  m_UseBatchedRaycasts: 0
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 180
+--- !u!114 &2642997876452454230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367567273121791792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: Sensor-180Deg
+  m_DetectableTags:
+  - Obstacle
+  - Laser
+  - Agent
+  m_RaysPerDirection: 8
+  m_MaxRayDegrees: 180
+  m_SphereCastRadius: 0.5
+  m_RayLength: 1000
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967283
+  m_ObservationStacks: 1
+  m_AlternatingRayOrder: 1
+  m_UseBatchedRaycasts: 0
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: -180
+--- !u!114 &8090705258651618501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367567273121791792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: Sensor90Deg
+  m_DetectableTags:
+  - Obstacle
+  - Laser
+  - Agent
+  m_RaysPerDirection: 6
+  m_MaxRayDegrees: 180
+  m_SphereCastRadius: 0.5
+  m_RayLength: 1000
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967283
   m_ObservationStacks: 1
   m_AlternatingRayOrder: 1
   m_UseBatchedRaycasts: 0
@@ -745,7 +828,7 @@ MonoBehaviour:
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
   m_EndVerticalOffset: 90
---- !u!114 &2642997876452454230
+--- !u!114 &3905723201996281536
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -760,13 +843,15 @@ MonoBehaviour:
   m_SensorName: Sensor-90Deg
   m_DetectableTags:
   - Obstacle
+  - Laser
+  - Agent
   m_RaysPerDirection: 6
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
-  m_RayLength: 50
+  m_RayLength: 1000
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967291
+    m_Bits: 4294967283
   m_ObservationStacks: 1
   m_AlternatingRayOrder: 1
   m_UseBatchedRaycasts: 0
@@ -774,61 +859,3 @@ MonoBehaviour:
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
   m_EndVerticalOffset: -90
---- !u!114 &8090705258651618501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6367567273121791792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SensorName: Sensor45Deg
-  m_DetectableTags:
-  - Obstacle
-  m_RaysPerDirection: 6
-  m_MaxRayDegrees: 180
-  m_SphereCastRadius: 0.5
-  m_RayLength: 75
-  m_RayLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967291
-  m_ObservationStacks: 1
-  m_AlternatingRayOrder: 1
-  m_UseBatchedRaycasts: 0
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
-  m_StartVerticalOffset: 0
-  m_EndVerticalOffset: 45
---- !u!114 &3905723201996281536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6367567273121791792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SensorName: Sensor-45Deg
-  m_DetectableTags:
-  - Obstacle
-  m_RaysPerDirection: 6
-  m_MaxRayDegrees: 180
-  m_SphereCastRadius: 0.5
-  m_RayLength: 75
-  m_RayLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967291
-  m_ObservationStacks: 1
-  m_AlternatingRayOrder: 1
-  m_UseBatchedRaycasts: 0
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
-  m_StartVerticalOffset: 0
-  m_EndVerticalOffset: -45
