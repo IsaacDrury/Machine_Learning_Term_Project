@@ -5,11 +5,12 @@ using Unity.MLAgents.Actuators;
 
 public class ShipBrain : Agent
 {
-    [SerializeField] private Vector3 startingPosition;
+    [SerializeField] public GameObject ShipGenerator;
     private agentMovement movementScript;
     public float maxSteps = 20000f;
     private float stepCount;
     public RayPerceptionSensorComponent3D sensorFront;
+    private bool start = true;
 
     void Start()
     {
@@ -18,7 +19,13 @@ public class ShipBrain : Agent
     }
     public override void OnEpisodeBegin()
     {
-        transform.position = startingPosition;
+        // Ships were already given a random spawn on start by the ShipGenerator so skip the first OnEpisodeBegin
+        if (!start) {
+            ShipGenerator.GetComponent<ShipGeneration>().randomShipReset();
+        }
+        else {
+            start = false;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

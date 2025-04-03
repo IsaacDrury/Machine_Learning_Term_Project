@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c4748a6b78dbf4687e49353a624771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strikecraftAgents: []
-  strikecraftAgent: {fileID: 8427289820192858864, guid: 7ee5812d4887aeb4bb37095804f3f525, type: 3}
-  spawnStrikecraft: 3
+  Team1Agents: []
+  Team1Agent: {fileID: 2312838180265024677, guid: c56e3d90a3632ad4b8a704c0631fafe2, type: 3}
+  Team2Agents: []
+  Team2Agent: {fileID: 6367567273121791792, guid: 512d454098b7f0f4ebb9fc1acb8e7948, type: 3}
+  spawnShips: 2
+  T1Rotation: {x: 0, y: 180, z: 0}
+  T2Rotation: {x: 0, y: 0, z: 0}
