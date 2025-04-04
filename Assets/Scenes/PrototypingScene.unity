@@ -183,7 +183,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 2000
+  far clip plane: 3000
   field of view: 90
   orthographic: 0
   orthographic size: 5
@@ -211,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1000, y: 0, z: 0}
+  m_LocalPosition: {x: 2000, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -587,10 +587,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 763858724086212071, guid: bb6a0164d5b762846bf0e521d4b9f80c, type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 330585543}
+    - target: {fileID: 763858724086212071, guid: bb6a0164d5b762846bf0e521d4b9f80c, type: 3}
+      propertyPath: currentCam
+      value: 
+      objectReference: {fileID: 330585543}
     - target: {fileID: 6739074335587960377, guid: bb6a0164d5b762846bf0e521d4b9f80c, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7989829415287423698, guid: bb6a0164d5b762846bf0e521d4b9f80c, type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 330585543}
+    - target: {fileID: 7989829415287423698, guid: bb6a0164d5b762846bf0e521d4b9f80c, type: 3}
+      propertyPath: currentCam
+      value: 
+      objectReference: {fileID: 330585543}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -32,8 +32,8 @@ namespace Assets.Scripts
             ray = new Ray(firingPoint.position, firingPoint.forward);
             Debug.DrawRay(ray.origin, ray.direction * 500);
             Physics.Raycast(ray, out hit);
-            if (hit.collider.tag == "Agent" && hit.distance < 500)
-
+            if ((hit.collider.tag == "Team 1" && this.gameObject.tag != "Team 1" && hit.distance < 500)
+                || (hit.collider.tag == "Team 2" && this.gameObject.tag != "Team 2" && hit.distance < 500))
             {
                 //Add reward here
                 if (!inCooldown)
