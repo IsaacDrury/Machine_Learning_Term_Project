@@ -32,16 +32,19 @@ namespace Assets.Scripts
             ray = new Ray(firingPoint.position, firingPoint.forward);
             Debug.DrawRay(ray.origin, ray.direction * 500);
             Physics.Raycast(ray, out hit);
-            if ((hit.collider.tag == "Team 1" && this.gameObject.tag != "Team 1" && hit.distance < 500)
-                || (hit.collider.tag == "Team 2" && this.gameObject.tag != "Team 2" && hit.distance < 500))
+            if (hit.collider != null)
             {
-                //Add reward here
-                if (!inCooldown)
+                if ((hit.collider.tag == "Team 1" && this.gameObject.tag != "Team 1" && hit.distance < 500)
+                    || (hit.collider.tag == "Team 2" && this.gameObject.tag != "Team 2" && hit.distance < 500))
                 {
-                    agent.AddReward(2.0f);
-                    Debug.LogWarning("Firing Laser");
+                    //Add reward here
+                    if (!inCooldown)
+                    {
+                        agent.AddReward(2.0f);
+                        Debug.LogWarning("Firing Laser");
 
-                    FireLaser();
+                        FireLaser();
+                    }
                 }
             }
         }

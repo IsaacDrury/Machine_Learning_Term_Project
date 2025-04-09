@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
         slider.value = health;
         if (health <= 0)
         {
-            this.gameObject.GetComponentInParent<Transform>().gameObject.SetActive(false);
+            this.gameObject.transform.parent.gameObject.SetActive(false);
         }
     }
 
