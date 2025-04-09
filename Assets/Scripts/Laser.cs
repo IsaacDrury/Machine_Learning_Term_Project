@@ -30,12 +30,12 @@ namespace Assets.Scripts
 
         private void OnTriggerEnter(Collider collision)
         {
-            if (collision.gameObject.tag == "Agent")
+            GameObject target = collision.gameObject;
+            if (target.tag == "Team 1" || target.tag == "Team 2")
             {
                 parentAgent.AddReward(5.0f);
-                Debug.LogWarning("Ship Hit With Laser");
                 Instantiate(laserExplosion, laserTransform.position, laserTransform.rotation);
-                //Subtract health from ship
+                target.transform.GetChild(1).GetComponent<Health>().ChangeHealth(1);
                 Destroy(this.gameObject);
 
             }
