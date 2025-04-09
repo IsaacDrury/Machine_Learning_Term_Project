@@ -62,7 +62,7 @@ namespace Assets.Scripts
             {
                 index1 = 0;
             }
-            if (team1[index1] != null)
+            if (team1[index1] != null && team1[index1].transform.parent.gameObject.activeSelf)
             {
                 currentCam.SetActive(false);
                 currentCam = team1[index1];
@@ -78,7 +78,7 @@ namespace Assets.Scripts
             {
                 index2 = 0;
             }
-            if (team2[index2] != null)
+            if (team2[index2] != null && team2[index2].transform.parent.gameObject.activeSelf)
             {
                 currentCam.SetActive(false);
                 currentCam = team2[index2];

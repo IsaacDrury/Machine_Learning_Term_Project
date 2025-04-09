@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private GameObject healthBar;
     [SerializeField] private int maxHealth;
 
     private Slider slider;
@@ -13,7 +12,7 @@ public class Health : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-        slider = healthBar.GetComponent<Slider>();
+        slider = this.GetComponent<Slider>();
         slider.maxValue = maxHealth;
         slider.value = health;
     }
@@ -22,16 +21,17 @@ public class Health : MonoBehaviour
     public void ChangeHealth(int damage)
     {
         health -= damage;
+        slider.value = health;
         if (health <= 0)
         {
-            this.gameObject.SetActive(false);
+            this.gameObject.GetComponentInParent<Transform>().gameObject.SetActive(false);
         }
-        slider.value = health;
     }
 
     // Reset health and health bar
     public void ResetHealth()
     {
         health = maxHealth;
+        slider.value = health;
     }
 }
