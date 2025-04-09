@@ -14,6 +14,7 @@ namespace Assets.Scripts
         private Transform laserTransform;
         private Rigidbody rb;
         private ShipBrain parentAgent;
+        private bool hit;
 
         private void Awake()
         {
@@ -21,6 +22,7 @@ namespace Assets.Scripts
             Invoke("ReEnableCollider", 0.1f);
             laserTransform = this.transform;
             rb = this.GetComponent<Rigidbody>();
+            hit = false;
         }
 
         private void FixedUpdate()
@@ -31,15 +33,16 @@ namespace Assets.Scripts
         private void OnTriggerEnter(Collider collision)
         {
             GameObject target = collision.gameObject;
-            if (target.tag == "Team 1" || target.tag == "Team 2")
+            if (hit == false && (target.tag == "Team 1" || target.tag == "Team 2"))
             {
+                hit = true;
                 parentAgent.AddReward(5.0f);
                 Instantiate(laserExplosion, laserTransform.position, laserTransform.rotation);
                 target.transform.GetChild(1).GetComponent<Health>().ChangeHealth(1);
                 Destroy(this.gameObject);
 
             }
-            else if (collision.gameObject.tag == "Obstacle")
+            else if (hit == false && collision.gameObject.tag == "Obstacle")
             {
                 Instantiate(laserExplosion, laserTransform.position, laserTransform.rotation);
                 Destroy(this.gameObject);
