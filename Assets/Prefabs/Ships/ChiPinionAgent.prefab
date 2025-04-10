@@ -176,6 +176,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5986959690140214666}
     m_Modifications:
+    - target: {fileID: 172984271198713371, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 373818082624377662, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: m_Name
       value: HealthCanvas
