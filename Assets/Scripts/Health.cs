@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
+    [SerializeField] private string type;
 
     private Slider slider;
     private int health;
@@ -33,5 +34,11 @@ public class Health : MonoBehaviour
     {
         health = maxHealth;
         slider.value = health;
+    }
+
+    // Returns ship type (Strike-craft, Frigate, Cruiser)
+    public string GetShipType()
+    {
+        return type;
     }
 }
