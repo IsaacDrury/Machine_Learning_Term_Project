@@ -7,6 +7,7 @@ public class ShipBrain : Agent
 {
     [SerializeField] public GameObject ShipGenerator;
     private agentMovement movementScript;
+    private ShipGeneration generatorScript;
     public float maxSteps = 20000f;
     private float stepCount;
     public RayPerceptionSensorComponent3D sensorFront;
@@ -15,13 +16,19 @@ public class ShipBrain : Agent
     void Start()
     {
         movementScript = GetComponent<agentMovement>();
- 
+        generatorScript = ShipGenerator.GetComponent<ShipGeneration>();
     }
     public override void OnEpisodeBegin()
     {
         // Ships were already given a random spawn on start by the ShipGenerator so skip the first OnEpisodeBegin
         if (!start) {
-            ShipGenerator.GetComponent<ShipGeneration>().randomShipReset();
+            int strikeAgents = generatorScript.spawnStrikeShips;
+            int frigateAgents = generatorScript.spawnFrigates;
+            int cruiserAgents = generatorScript.spawnCruisers;
+
+            generatorScript.randomShipReset(strikeAgents, false);
+            generatorScript.randomShipReset(frigateAgents, false);
+            generatorScript.randomShipReset(cruiserAgents, true);
         }
         else {
             start = false;
