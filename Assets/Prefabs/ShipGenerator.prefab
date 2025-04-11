@@ -45,9 +45,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Team1Agents: []
-  Team1Agent: {fileID: 2312838180265024677, guid: c56e3d90a3632ad4b8a704c0631fafe2, type: 3}
   Team2Agents: []
-  Team2Agent: {fileID: 6367567273121791792, guid: 512d454098b7f0f4ebb9fc1acb8e7948, type: 3}
-  spawnShips: 2
+  Cruisers: []
+  strikeCraftAgent: {fileID: 6367567273121791792, guid: 512d454098b7f0f4ebb9fc1acb8e7948, type: 3}
+  frigateAgent: {fileID: 974394742039023951, guid: 67cf92010410c734d97cad7ce7724a17, type: 3}
+  cruiserAgent: {fileID: 974394742039023951, guid: 2da7b813aa0d617469096f9ac35eedbd, type: 3}
+  CameraCanvas: {fileID: 0}
+  spawnStrikeShips: 2
+  spawnFrigates: 1
+  spawnCruisers: 1
   T1Rotation: {x: 0, y: 180, z: 0}
   T2Rotation: {x: 0, y: 0, z: 0}

@@ -560,6 +560,18 @@ PrefabInstance:
       value: ShipGenerator
       objectReference: {fileID: 0}
     - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: CameraCanvas
+      value: 
+      objectReference: {fileID: 1646356611}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: T1Rotation.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: T2Rotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
       propertyPath: cruiserAgent
       value: 
       objectReference: {fileID: 974394742039023951, guid: 67cf92010410c734d97cad7ce7724a17, type: 3}
@@ -592,6 +604,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
   m_PrefabInstance: {fileID: 1166762543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1646356611 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 5107846700814363816, guid: bb6a0164d5b762846bf0e521d4b9f80c, type: 3}
+  m_PrefabInstance: {fileID: 586868554049050373}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &586868554049050373
 PrefabInstance:

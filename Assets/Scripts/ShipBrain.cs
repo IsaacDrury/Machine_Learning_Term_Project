@@ -26,9 +26,11 @@ public class ShipBrain : Agent
             int frigateAgents = generatorScript.spawnFrigates;
             int cruiserAgents = generatorScript.spawnCruisers;
 
-            generatorScript.randomShipReset(strikeAgents, false);
-            generatorScript.randomShipReset(frigateAgents, false);
-            generatorScript.randomShipReset(cruiserAgents, true);
+            // I'm sorry...how many ships, sir?
+            Debug.Log("S: " + strikeAgents + " F: " + frigateAgents + " C: " + cruiserAgents);
+
+            generatorScript.randomShipReset(3, false);
+            generatorScript.randomShipReset(1, true);
         }
         else {
             start = false;
