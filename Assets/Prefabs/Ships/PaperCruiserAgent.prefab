@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: -2133717783341988623}
   - component: {fileID: 4282785229125551554}
   - component: {fileID: 2185778087377889086}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PaperCruiserAgent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,6 +378,8 @@ MonoBehaviour:
   - Obstacle
   - Laser
   - Agent
+  - Team 1
+  - Team 2
   m_RaysPerDirection: 6
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
@@ -409,6 +411,8 @@ MonoBehaviour:
   - Obstacle
   - Laser
   - Agent
+  - Team 1
+  - Team 2
   m_RaysPerDirection: 6
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
@@ -440,6 +444,8 @@ MonoBehaviour:
   - Obstacle
   - Laser
   - Agent
+  - Team 1
+  - Team 2
   m_RaysPerDirection: 8
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
@@ -471,6 +477,8 @@ MonoBehaviour:
   - Obstacle
   - Laser
   - Agent
+  - Team 1
+  - Team 2
   m_RaysPerDirection: 6
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
@@ -502,6 +510,8 @@ MonoBehaviour:
   - Obstacle
   - Laser
   - Agent
+  - Team 1
+  - Team 2
   m_RaysPerDirection: 6
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
@@ -641,7 +651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3336714735812036115}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: FiringPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +685,7 @@ GameObject:
   - component: {fileID: 2281043090707632067}
   - component: {fileID: 7343130930338525750}
   - component: {fileID: 5918103545512922241}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: AgentCam
   m_TagString: Agent
   m_Icon: {fileID: 0}
@@ -816,6 +826,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 373818082624377662, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351982304097949264, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3128151016601673758, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: type
       value: Cruiser
@@ -823,6 +841,10 @@ PrefabInstance:
     - target: {fileID: 3128151016601673758, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: maxHealth
       value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 3379278919967430804, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4576627644402243443, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -915,6 +937,14 @@ PrefabInstance:
     - target: {fileID: 4768580769386850967, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174360128718663367, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6343982239447671505, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

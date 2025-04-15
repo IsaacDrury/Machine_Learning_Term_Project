@@ -40,7 +40,7 @@ namespace Assets.Scripts
                     //Add reward here
                     if (!inCooldown)
                     {
-                        agent.AddReward(2.0f);
+                        agent.AddReward(10.0f);
                         Debug.LogWarning("Firing Laser");
 
                         FireLaser();

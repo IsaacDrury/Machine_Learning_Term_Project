@@ -36,7 +36,7 @@ namespace Assets.Scripts
             if (hit == false && (target.tag == "Team 1" || target.tag == "Team 2"))
             {
                 hit = true;
-                parentAgent.AddReward(5.0f);
+                parentAgent.AddReward(20.0f);
                 Instantiate(laserExplosion, laserTransform.position, laserTransform.rotation);
                 target.transform.GetChild(1).GetComponent<Health>().ChangeHealth(1);
                 Destroy(this.gameObject);

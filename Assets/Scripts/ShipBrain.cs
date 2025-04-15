@@ -44,7 +44,7 @@ public class ShipBrain : Agent
             AddReward(-6.0f);
 
             // Log to console for debugging
-            Debug.LogWarning("Ship Destroyed");
+            Debug.LogWarning("Ship Hit By Something");
             EndEpisode();
         }
     }
@@ -57,16 +57,16 @@ public class ShipBrain : Agent
         if (sensorFront != null)
         {
             var perception = RayPerceptionSensor.Perceive(sensorFront.GetRayPerceptionInput(), false);
-            if (perception != null)
+            if (perception != null && perception.RayOutputs != null)
             {
                 var rayOutputs = perception.RayOutputs;
-
                 foreach (var rayOutput in rayOutputs)
                 {
-                    if (rayOutput.HitGameObject != null && rayOutput.HitGameObject.CompareTag("Agent"))
+                    if (rayOutput.HitGameObject != null &&
+                        ((gameObject.CompareTag("Team 1") && rayOutput.HitGameObject.CompareTag("Team 2")) ||
+                         (gameObject.CompareTag("Team 2") && rayOutput.HitGameObject.CompareTag("Team 1"))))
                     {
-                        AddReward(0.01f);
-                        //Debug.LogWarning("Ship Seen");
+                        AddReward(0.001f);
                     }
                 }
             }
