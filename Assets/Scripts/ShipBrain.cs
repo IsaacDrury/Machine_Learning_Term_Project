@@ -5,36 +5,22 @@ using Unity.MLAgents.Actuators;
 
 public class ShipBrain : Agent
 {
-    [SerializeField] public GameObject ShipGenerator;
     private agentMovement movementScript;
-    private ShipGeneration generatorScript;
+    private turretMovement turretScript;
     public float maxSteps = 20000f;
     private float stepCount;
     public RayPerceptionSensorComponent3D sensorFront;
-    private bool start = true;
 
     void Start()
     {
+        if (this.GetComponent<Health>().GetShipType() == "Cruiser") {
+            turretScript = GetComponent<turretMovement>();
+        }
         movementScript = GetComponent<agentMovement>();
-        generatorScript = ShipGenerator.GetComponent<ShipGeneration>();
     }
     public override void OnEpisodeBegin()
     {
-        // Ships were already given a random spawn on start by the ShipGenerator so skip the first OnEpisodeBegin
-        if (!start) {
-            int strikeAgents = generatorScript.spawnStrikeShips;
-            int frigateAgents = generatorScript.spawnFrigates;
-            int cruiserAgents = generatorScript.spawnCruisers;
 
-            // I'm sorry...how many ships, sir?
-            Debug.Log("S: " + strikeAgents + " F: " + frigateAgents + " C: " + cruiserAgents);
-
-            generatorScript.randomShipReset(3, false);
-            generatorScript.randomShipReset(1, true);
-        }
-        else {
-            start = false;
-        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -50,9 +36,16 @@ public class ShipBrain : Agent
     }
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-        float pitch = actionBuffers.ContinuousActions[0];
-        float yaw = actionBuffers.ContinuousActions[1];
-        movementScript.ApplyMovement(pitch, yaw);
+        if (this.GetComponent<Health>().GetShipType() == "Cruiser") {
+            float tilt = actionBuffers.ContinuousActions[0];
+            float turn = actionBuffers.ContinuousActions[1];
+            turretScript.ApplyMovement(tilt, turn);
+        }
+        else {
+            float pitch = actionBuffers.ContinuousActions[0];
+            float yaw = actionBuffers.ContinuousActions[1];
+            movementScript.ApplyMovement(pitch, yaw);
+        }
 
         if (sensorFront != null)
         {

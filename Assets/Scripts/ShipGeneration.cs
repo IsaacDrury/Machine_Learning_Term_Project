@@ -1,6 +1,5 @@
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Xml.Serialization;
 using Assets.Scripts;
 using Unity.MLAgents;
 using UnityEngine;
@@ -14,16 +13,71 @@ public class ShipGeneration : MonoBehaviour
     [SerializeField] GameObject frigateAgent;
     [SerializeField] GameObject cruiserAgent;
     [SerializeField] Canvas CameraCanvas;
-    public int spawnStrikeShips;
-    public int spawnFrigates;
-    public int spawnCruisers;
+    public int numStrikeShips;
+    public int numFrigates;
+    public int numCruisers;
     [SerializeField] Vector3 T1Rotation = Vector3.zero;
     [SerializeField] Vector3 T2Rotation = Vector3.zero;
     private Vector3 shipPos1 = Vector3.zero;
     private Vector3 shipPos2 = Vector3.zero;
     private bool isCruiser = false;
+    private int numInactiveTeam1 = 0;
+    private int numInactiveTeam2 = 0;
+
+    public int checkReset() {
+        int numTeam1Agents = Team1Agents.Count;
+        int numTeam2Agents = Team2Agents.Count;
+        int numCruiserAgents = Cruisers.Count;
+        bool allDead = true;
+        
+        foreach (GameObject ship in Team1Agents) {
+            if (ship.activeSelf) {
+                allDead = false;
+                break;
+            }
+        }
+
+        if (allDead && Cruisers[0].activeSelf == false) {
+            // I'm sorry...how many ships, sir?
+            Debug.Log("T1: " + numTeam1Agents + " T2: " + numTeam2Agents + " Cruisers: " + numCruiserAgents);
+            // The above list sizes be the same numbers as the integers below
+            Debug.Log("S: " + numStrikeShips + " F: " + numFrigates + " C: " + numCruisers);
+            randomShipReset(numTeam1Agents, false);
+            randomShipReset(numCruisers, true);
+            StartCoroutine(TimeDelay(5.0f));
+            return 0;
+        }
+
+        //else reset to true to check team 2
+        allDead = true;
+        foreach (GameObject ship in Team2Agents) {
+            if (ship.activeSelf) {
+                allDead = false;
+                break;
+            }
+        }
+
+        if (allDead && Cruisers[0].activeSelf == false) {
+            // I'm sorry...how many ships, sir?
+            Debug.Log("T1: " + numTeam1Agents + " T2: " + numTeam2Agents + " Cruisers: " + numCruiserAgents);
+            // The above list sizes be the same numbers as the integers below
+            Debug.Log("S: " + numStrikeShips + " F: " + numFrigates + " C: " + numCruisers);
+            randomShipReset(numTeam1Agents, false);
+            randomShipReset(numCruisers, true);
+            StartCoroutine(TimeDelay(5.0f));
+            return 0;
+        }
+        return 0;
+    }
+
+    IEnumerator TimeDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Debug.Log( delay + " seconds.");
+    }
 
     private void randomShipSpawn(GameObject shipAgent, int numShips) {
+        Debug.Log("Spawning for da first time!");
 
         for (int i = 0; i < numShips; i++)
         {
@@ -66,6 +120,7 @@ public class ShipGeneration : MonoBehaviour
     }
 
     private void generateRandPos(int numShips, bool Cruiser) {
+        Debug.Log("Generating two random positions");
         int posX1;
         int posX2;
         int posY1;
@@ -104,6 +159,8 @@ public class ShipGeneration : MonoBehaviour
     }
 
     public void randomShipReset(int numShips, bool Cruiser) {
+        Debug.Log("Resetting ships");
+        
         for (int i = 0; i < numShips; i++)
         {   
             // Where we at?
@@ -159,9 +216,9 @@ public class ShipGeneration : MonoBehaviour
 
     void Start()
     {
-        randomShipSpawn(strikeCraftAgent, spawnStrikeShips);
-        randomShipSpawn(frigateAgent, spawnFrigates);
-        randomShipSpawn(cruiserAgent, spawnCruisers);
+        randomShipSpawn(strikeCraftAgent, numStrikeShips);
+        // randomShipSpawn(frigateAgent, numFrigates);
+        // randomShipSpawn(cruiserAgent, numCruisers);
         CameraCanvas.GetComponent<CameraControl>().GetCams();
-    } 
+    }
 }
