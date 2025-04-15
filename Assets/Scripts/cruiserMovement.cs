@@ -1,11 +1,9 @@
 using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class cruiserMovement : MonoBehaviour
 {
-    [SerializeField] private float angle = 90.0f;
     [SerializeField] private float speed = 50f;
     [SerializeField] private Rigidbody rBdy;
 
@@ -40,9 +38,17 @@ public class cruiserMovement : MonoBehaviour
                 health.ChangeHealth(24);
             }
         }
-        else if (collision.gameObject.tag == "Obstacle" && health.GetShipType() != "Cruiser")
+        // Collisions with asteroids and world borders
+        else if (collision.gameObject.tag == "Obstacle")
         {
-            health.ChangeHealth(6);
+            if (collision.gameObject.transform.parent.name == "WorldBorder")
+            {
+                health.ChangeHealth(200);
+            }
+            else if (health.GetShipType() != "Cruiser")
+            {
+                health.ChangeHealth(6);
+            }
         }
     }
 }

@@ -9,20 +9,18 @@ public class ShipGeneration : MonoBehaviour
     [SerializeField] private List<GameObject> Team1Agents;
     [SerializeField] private List<GameObject> Team2Agents;
     [SerializeField] private List<GameObject> Cruisers;
-    [SerializeField] GameObject strikeCraftAgent;
-    [SerializeField] GameObject frigateAgent;
-    [SerializeField] GameObject cruiserAgent;
-    [SerializeField] Canvas CameraCanvas;
+    [SerializeField] private GameObject strikeCraftAgent;
+    [SerializeField] private GameObject frigateAgent;
+    [SerializeField] private GameObject cruiserAgent;
+    [SerializeField] private Canvas CameraCanvas;
     public int numStrikeShips;
     public int numFrigates;
     public int numCruisers;
-    [SerializeField] Vector3 T1Rotation = Vector3.zero;
-    [SerializeField] Vector3 T2Rotation = Vector3.zero;
+    [SerializeField] private Vector3 T1Rotation = Vector3.zero;
+    [SerializeField] private Vector3 T2Rotation = Vector3.zero;
     private Vector3 shipPos1 = Vector3.zero;
     private Vector3 shipPos2 = Vector3.zero;
     private bool isCruiser = false;
-    private int numInactiveTeam1 = 0;
-    private int numInactiveTeam2 = 0;
 
     public int checkReset() {
         int numTeam1Agents = Team1Agents.Count;
@@ -81,7 +79,7 @@ public class ShipGeneration : MonoBehaviour
 
         for (int i = 0; i < numShips; i++)
         {
-            if (shipAgent.GetComponentInChildren<Health>().GetShipType() == "Cruiser") {
+            if (shipAgent.gameObject.transform.GetChild(1).GetComponent<Health>().GetShipType() == "Cruiser") {
                 isCruiser = true;
                 generateRandPos(1, isCruiser);
             }
@@ -93,7 +91,7 @@ public class ShipGeneration : MonoBehaviour
             GameObject agent1 = Instantiate(shipAgent);
             agent1.tag = "Team 1";
             // Position them
-            agent1.transform.localPosition = shipPos1;
+            agent1.transform.position = shipPos1;
             // Rotato the potatoes
             agent1.transform.Rotate(T1Rotation);
 
@@ -102,7 +100,7 @@ public class ShipGeneration : MonoBehaviour
             // Setting trail gradient color for Team2 which fades from front-to-back
             agent1.GetComponent<TrailRenderer>().startColor = new Color (1.0f, 0.4f, 0.0f);
             agent1.GetComponent<TrailRenderer>().endColor = Color.white;
-            agent2.transform.localPosition = shipPos2;
+            agent2.transform.position = shipPos2;
             agent2.transform.Rotate(T2Rotation);
 
             if (isCruiser) {
@@ -171,21 +169,21 @@ public class ShipGeneration : MonoBehaviour
                 Cruisers[i].SetActive(true);
                 // Check the first cruisers tag and reset team-specific variables
                 if (Cruisers[i].tag == "Team 1") {
-                    Cruisers[i].transform.localPosition = shipPos1;
+                    Cruisers[i].transform.position = shipPos1;
                     Cruisers[i].transform.Rotate(T1Rotation);
                 }
                 else if (Cruisers[i].tag == "Team 2") {
-                    Cruisers[i].transform.localPosition = shipPos2;
+                    Cruisers[i].transform.position = shipPos2;
                     Cruisers[i].transform.Rotate(T2Rotation);
                 }
 
                 // Check the second cruisers tag and do the same recipe
                 if (Cruisers[i+1].tag == "Team 1") {
-                    Cruisers[i+1].transform.localPosition = shipPos1;
+                    Cruisers[i+1].transform.position = shipPos1;
                     Cruisers[i+1].transform.Rotate(T1Rotation);
                 }
                 else if (Cruisers[i+1].tag == "Team 2") {
-                    Cruisers[i+1].transform.localPosition = shipPos2;
+                    Cruisers[i+1].transform.position = shipPos2;
                     Cruisers[i+1].transform.Rotate(T2Rotation);
                 }
                 Cruisers[i].GetComponent<Rigidbody>().linearVelocity.Set(0,0,0);
@@ -199,8 +197,8 @@ public class ShipGeneration : MonoBehaviour
                 Team1Agents[i].SetActive(true);
                 Team2Agents[i].SetActive(true);
                 // Go to your room!
-                Team1Agents[i].transform.localPosition = shipPos1;
-                Team2Agents[i].transform.localPosition = shipPos2;
+                Team1Agents[i].transform.position = shipPos1;
+                Team2Agents[i].transform.position = shipPos2;
                 // Slow Down!
                 Team1Agents[i].GetComponent<Rigidbody>().linearVelocity.Set(0,0,0);
                 Team2Agents[i].GetComponent<Rigidbody>().linearVelocity.Set(0,0,0);
@@ -216,9 +214,12 @@ public class ShipGeneration : MonoBehaviour
 
     void Start()
     {
+        Team1Agents = new List<GameObject>();
+        Team2Agents = new List<GameObject>();
+        Cruisers = new List<GameObject>();
         randomShipSpawn(strikeCraftAgent, numStrikeShips);
-        // randomShipSpawn(frigateAgent, numFrigates);
-        // randomShipSpawn(cruiserAgent, numCruisers);
+        randomShipSpawn(frigateAgent, numFrigates);
+        randomShipSpawn(cruiserAgent, numCruisers);
         CameraCanvas.GetComponent<CameraControl>().GetCams();
     }
 }

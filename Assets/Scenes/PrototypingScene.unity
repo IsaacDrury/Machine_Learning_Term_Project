@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: warningFilter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5099571830265465384, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 5296442698276390248, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -413,9 +417,17 @@ PrefabInstance:
       value: ShipGenerator
       objectReference: {fileID: 0}
     - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: numCruisers
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: numFrigates
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
       propertyPath: CameraCanvas
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1232047561}
     - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
       propertyPath: T1Rotation.y
       value: 180
@@ -427,11 +439,11 @@ PrefabInstance:
     - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
       propertyPath: cruiserAgent
       value: 
-      objectReference: {fileID: 974394742039023951, guid: 67cf92010410c734d97cad7ce7724a17, type: 3}
+      objectReference: {fileID: 974394742039023951, guid: 2da7b813aa0d617469096f9ac35eedbd, type: 3}
     - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
       propertyPath: frigateAgent
       value: 
-      objectReference: {fileID: 974394742039023951, guid: 2da7b813aa0d617469096f9ac35eedbd, type: 3}
+      objectReference: {fileID: 974394742039023951, guid: 67cf92010410c734d97cad7ce7724a17, type: 3}
     - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
       propertyPath: spawnCruisers
       value: 1
@@ -439,6 +451,10 @@ PrefabInstance:
     - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
       propertyPath: spawnFrigates
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: numStrikeShips
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
       propertyPath: spawnStrikeShips
@@ -457,6 +473,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
   m_PrefabInstance: {fileID: 1166762543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1232047561 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 5107846700814363816, guid: bb6a0164d5b762846bf0e521d4b9f80c, type: 3}
+  m_PrefabInstance: {fileID: 1633726012}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1630738014 stripped
 GameObject:

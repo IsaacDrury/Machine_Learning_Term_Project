@@ -13,7 +13,7 @@ public class ShipBrain : Agent
 
     void Start()
     {
-        if (this.GetComponent<Health>().GetShipType() == "Cruiser") {
+        if (this.gameObject.transform.GetChild(1).GetComponent<Health>().GetShipType() == "Cruiser") {
             turretScript = GetComponent<turretMovement>();
         }
         movementScript = GetComponent<agentMovement>();
@@ -24,7 +24,7 @@ public class ShipBrain : Agent
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Obstacle") || other.CompareTag("Laser") || other.CompareTag("Team 1") || other.CompareTag("Team 2"))
+        if (other.CompareTag("Obstacle") || other.CompareTag("Laser") || other.CompareTag("Team 1") || other.CompareTag("Team 2") || other.CompareTag("Border"))
         {
             // Add a negative reward for hitting big space rock
             AddReward(-6.0f);
@@ -36,7 +36,7 @@ public class ShipBrain : Agent
     }
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-        if (this.GetComponent<Health>().GetShipType() == "Cruiser") {
+        if (this.gameObject.transform.GetChild(1).GetComponent<Health>().GetShipType() == "Cruiser") {
             float tilt = actionBuffers.ContinuousActions[0];
             float turn = actionBuffers.ContinuousActions[1];
             turretScript.ApplyMovement(tilt, turn);
