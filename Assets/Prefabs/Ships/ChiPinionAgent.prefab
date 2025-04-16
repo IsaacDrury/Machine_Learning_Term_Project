@@ -1,5 +1,133 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2832914344799052213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7664307803565857369}
+  - component: {fileID: 658939619463792970}
+  m_Layer: 0
+  m_Name: SensorFront2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7664307803565857369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832914344799052213}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9157125250157113451}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &658939619463792970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832914344799052213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensor
+  m_DetectableTags:
+  - Obstacle
+  - Team 1
+  - Team 2
+  - Laser
+  m_RaysPerDirection: 5
+  m_MaxRayDegrees: 5
+  m_SphereCastRadius: 0.5
+  m_RayLength: 2000
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  m_AlternatingRayOrder: 1
+  m_UseBatchedRaycasts: 0
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
+--- !u!1 &3341224246794078096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5189547825367854945}
+  - component: {fileID: 6380506998091608136}
+  m_Layer: 0
+  m_Name: SensorFront1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5189547825367854945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341224246794078096}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9157125250157113451}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6380506998091608136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341224246794078096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensor
+  m_DetectableTags:
+  - Obstacle
+  - Laser
+  - Team 1
+  - Team 2
+  m_RaysPerDirection: 5
+  m_MaxRayDegrees: 5
+  m_SphereCastRadius: 0.5
+  m_RayLength: 2000
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  m_AlternatingRayOrder: 1
+  m_UseBatchedRaycasts: 0
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
 --- !u!1 &4817102942842078112
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +452,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -95
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_LocalPosition.y
@@ -332,7 +460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -566
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_LocalRotation.w
@@ -486,6 +614,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1430352406489968130}
+    - targetCorrespondingSourceObject: {fileID: -6085513712636956150, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5189547825367854945}
+    - targetCorrespondingSourceObject: {fileID: -6085513712636956150, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7664307803565857369}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       insertIndex: -1
@@ -809,7 +943,7 @@ MonoBehaviour:
   MaxStep: 0
   ShipGenerator: {fileID: 1608369227547484380, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
   maxSteps: 50000
-  sensorFront: {fileID: 6644211420981071278}
+  sensorFront: {fileID: 6380506998091608136}
 --- !u!114 &4170402062838685371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,7 +1009,7 @@ MonoBehaviour:
   - Agent
   - Team 1
   - Team 2
-  m_RaysPerDirection: 6
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -908,7 +1042,7 @@ MonoBehaviour:
   - Agent
   - Team 1
   - Team 2
-  m_RaysPerDirection: 6
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -941,7 +1075,7 @@ MonoBehaviour:
   - Agent
   - Team 1
   - Team 2
-  m_RaysPerDirection: 8
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -974,7 +1108,7 @@ MonoBehaviour:
   - Agent
   - Team 1
   - Team 2
-  m_RaysPerDirection: 6
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -1007,7 +1141,7 @@ MonoBehaviour:
   - Agent
   - Team 1
   - Team 2
-  m_RaysPerDirection: 6
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -1128,3 +1262,8 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!4 &9157125250157113451 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -6085513712636956150, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
+  m_PrefabInstance: {fileID: 6097677509453578849}
+  m_PrefabAsset: {fileID: 0}
