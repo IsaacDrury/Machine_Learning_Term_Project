@@ -18,11 +18,7 @@ namespace Assets.Scripts
         private int index1;
         private int index2;
 
-        public void Start()
-        {
-            GetCams();
-        }
-
+        // Called on episode begin
         public void GetCams()
         {
             currentCam = mainCam;
@@ -47,6 +43,7 @@ namespace Assets.Scripts
             index2 = 0;
         }
 
+        // Called by UI to change to main camera
         public void UseMainCam()
         {
             currentCam.SetActive(false);
@@ -55,7 +52,8 @@ namespace Assets.Scripts
             index1 = 0;
             index2 = 0;
         }
-
+        
+        // Called by UI to switch between team 1 agents' cams
         public void UseTeam1Cams()
         {
             if (index1 == team1.Count)
@@ -72,6 +70,7 @@ namespace Assets.Scripts
             }
         }
 
+        // Called by UI to switch between team 2 agents' cams
         public void UseTeam2Cams()
         {
             if (index2 == team2.Count)
@@ -88,6 +87,7 @@ namespace Assets.Scripts
             }
         }
 
+        // Expands and compresses the camera UI
         public void ToggleCamPanel()
         {
             camPanel.SetActive(!camPanel.activeSelf);

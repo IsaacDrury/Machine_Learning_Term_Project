@@ -1,12 +1,11 @@
 using Unity.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class agentMovement : MonoBehaviour
+public class cruiserMovement : MonoBehaviour
 {
-    public float angle = 90.0f;
-    public float speed = 50f;
-    public Rigidbody rBdy;
+    [SerializeField] private float speed = 50f;
+    [SerializeField] private Rigidbody rBdy;
 
     private Health health;
 
@@ -15,16 +14,14 @@ public class agentMovement : MonoBehaviour
         health = this.gameObject.transform.GetChild(1).GetComponent<Health>();
     }
 
-    // Apply rotation and velocity
-    public void ApplyMovement(float pitch, float yaw)
+    void FixedUpdate()
     {
-        transform.Rotate(new Vector3(pitch, 0, -yaw), angle * Time.deltaTime);
+        // Set forward velocity
         rBdy.linearVelocity = transform.forward * speed;
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-        // Collision with other ships
         if (collision.gameObject.tag == "Team 1" || collision.gameObject.tag == "Team 2")
         {
             Health otherHealth = collision.gameObject.transform.GetChild(1).GetComponent<Health>();

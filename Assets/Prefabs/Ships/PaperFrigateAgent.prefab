@@ -312,7 +312,6 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
-  ShipGenerator: {fileID: 1608369227547484380, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
   maxSteps: 50000
   sensorFront: {fileID: -3385597488433976980}
 --- !u!114 &-8833179993334475756
@@ -842,6 +841,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 3128151016601673758, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
+      propertyPath: ShipGenerator
+      value: 
+      objectReference: {fileID: 1608369227547484380, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
     - target: {fileID: 3379278919967430804, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: m_Layer
       value: 0
