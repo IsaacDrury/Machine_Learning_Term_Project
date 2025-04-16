@@ -111,7 +111,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1032,6 +1032,18 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4754822823272917425, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754822823272917425, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754822823272917425, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754822823272917425, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1045,19 +1057,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4754822823272917425, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9914448
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4754822823272917425, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.1305268
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4754822823272917425, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4754822823272917425, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4754822823272917425, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1069,7 +1081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4754822823272917425, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4754822823272917425, guid: b7c3520cc3833e64cad944525e168cc7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y

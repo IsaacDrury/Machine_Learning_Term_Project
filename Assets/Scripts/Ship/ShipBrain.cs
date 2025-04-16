@@ -22,9 +22,9 @@ public class ShipBrain : Agent
     {
 
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter (Collision collision)
     {
-        if (other.CompareTag("Obstacle") || other.CompareTag("Laser") || other.CompareTag("Team 1") || other.CompareTag("Team 2") || other.CompareTag("Border"))
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Laser") || collision.gameObject.CompareTag("Team 1") || collision.gameObject.CompareTag("Team 2"))
         {
             // Add a negative reward for hitting big space rock
             AddReward(-6.0f);

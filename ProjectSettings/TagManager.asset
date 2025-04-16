@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Obstacle
   - Agent
-  - Border
   - Laser
   - Team 1
   - Team 2

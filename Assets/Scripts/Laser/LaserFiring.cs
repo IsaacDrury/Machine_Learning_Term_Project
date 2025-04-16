@@ -24,7 +24,7 @@ namespace Assets.Scripts
         private void Awake()
         {
             inCooldown = false;
-            agent = GetComponent<ShipBrain>();
+            agent = this.GetComponent<ShipBrain>();
         }
 
         private void Update()

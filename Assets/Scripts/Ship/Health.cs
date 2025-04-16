@@ -15,7 +15,6 @@ public class Health : MonoBehaviour
     void Start()
     {
         generatorScript = ShipGenerator.GetComponent<ShipGeneration>();
-        
         health = maxHealth;
         slider = this.GetComponent<Slider>();
         slider.maxValue = maxHealth;
