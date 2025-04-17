@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserExplosion: {fileID: 7664674166405471066, guid: cada67862b4ec194987c6ebed28dc3f2, type: 3}
-  speed: 300
+  speed: 500
 --- !u!54 &343451134696861658
 Rigidbody:
   m_ObjectHideFlags: 0
