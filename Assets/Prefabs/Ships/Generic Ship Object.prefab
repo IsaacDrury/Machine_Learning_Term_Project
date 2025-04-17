@@ -289,7 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa19caee010de2c42af0815587108351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser: {fileID: 7885722811214933104, guid: 6f328b0f9b53125498736e238282a2a1, type: 3}
+  team1Laser: {fileID: 306718397291104926, guid: a624fd2349f715e4abc487eae6fa774a, type: 3}
+  team2Laser: {fileID: 8352568049141835132, guid: aa5daccbd759e7c43a0122123c9416c2, type: 3}
   sound: {fileID: 0}
   clips:
   - {fileID: 8300000, guid: 2c8f4a572ddc9b94cbccb731430b6a1a, type: 3}

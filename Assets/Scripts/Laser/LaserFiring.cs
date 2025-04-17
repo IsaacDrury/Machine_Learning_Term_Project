@@ -9,7 +9,8 @@ namespace Assets.Scripts
     public class LaserFiring : MonoBehaviour
     {
         // Laser Prefab
-        [SerializeField] private GameObject laser;
+        [SerializeField] private GameObject team1Laser;
+        [SerializeField] private GameObject team2Laser;
         [SerializeField] private AudioSource sound;
         [SerializeField] private AudioClip[] clips;
         [SerializeField] private Transform firingPoint;
@@ -62,7 +63,15 @@ namespace Assets.Scripts
             sound.clip = clips[index];
             sound.Play();
             inCooldown = true;
-            GameObject laserProjectile = Instantiate(laser, firingPoint.position, firingPoint.rotation);
+            GameObject laserProjectile = null;
+            if (this.tag == "Team 1")
+            {
+                laserProjectile = Instantiate(team1Laser, firingPoint.position, firingPoint.rotation);
+            }
+            else
+            {
+                laserProjectile = Instantiate(team2Laser, firingPoint.position, firingPoint.rotation);
+            }
             laserProjectile.transform.Rotate(new UnityEngine.Vector3(1, 0, 0), 90);
             Laser laserScript = laserProjectile.GetComponent<Laser>();
             laserScript.SetAgents(agent);

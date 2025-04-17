@@ -6,18 +6,30 @@ using UnityEngine;
 
 public class ShipGeneration : MonoBehaviour
 {
+    // Ships generated
     [SerializeField] private List<GameObject> Team1Agents;
     [SerializeField] private List<GameObject> Team2Agents;
     [SerializeField] private List<GameObject> Cruisers;
+
+    // Ship prefabs
     [SerializeField] private GameObject strikeCraftAgent;
     [SerializeField] private GameObject frigateAgent;
     [SerializeField] private GameObject cruiserAgent;
+
+    // Team specific values
+    [SerializeField] private Material team1Material;
+    [SerializeField] private Material team2Material;
+    [SerializeField] private Material trailMaterial;
+    [SerializeField] private Vector3 T1Rotation = Vector3.zero;
+    [SerializeField] private Vector3 T2Rotation = Vector3.zero;
+
     [SerializeField] private Canvas CameraCanvas;
+
+    // Ship amounts
     public int numStrikeShips;
     public int numFrigates;
     public int numCruisers;
-    [SerializeField] private Vector3 T1Rotation = Vector3.zero;
-    [SerializeField] private Vector3 T2Rotation = Vector3.zero;
+
     private Vector3 shipPos1 = Vector3.zero;
     private Vector3 shipPos2 = Vector3.zero;
     private bool isCruiser = false;
@@ -87,21 +99,36 @@ public class ShipGeneration : MonoBehaviour
                 generateRandPos(1, false);
             }
 
-            // Instantiate them
+            // Instantiate agent on team 1
             GameObject agent1 = Instantiate(shipAgent);
             agent1.tag = "Team 1";
+            Renderer[] renderers = agent1.GetComponentsInChildren<Renderer>();
+            foreach (Renderer renderer in renderers) 
+            {
+                renderer.material = team1Material;
+
+            }
             // Position them
             agent1.transform.position = shipPos1;
             // Rotato the potatoes
             agent1.transform.Rotate(T1Rotation);
+            // Setting trail gradient color for Team2 which fades from front-to-back
+            agent1.GetComponent<TrailRenderer>().material = trailMaterial;
+            agent1.GetComponent<TrailRenderer>().startColor = new Color(1.0f, 0.4f, 0.0f);
+            agent1.GetComponent<TrailRenderer>().endColor = Color.white;
 
+            // Instantiate agent on team 2
             GameObject agent2 = Instantiate(shipAgent);
             agent2.tag = "Team 2";
-            // Setting trail gradient color for Team2 which fades from front-to-back
-            agent1.GetComponent<TrailRenderer>().startColor = new Color (1.0f, 0.4f, 0.0f);
-            agent1.GetComponent<TrailRenderer>().endColor = Color.white;
+            renderers = agent2.GetComponentsInChildren<Renderer>();
+            foreach (Renderer renderer in renderers)
+            {
+                renderer.material = team2Material;
+            }
+            // Position and rotate agent
             agent2.transform.position = shipPos2;
             agent2.transform.Rotate(T2Rotation);
+            agent2.GetComponent<TrailRenderer>().material = trailMaterial;
 
             if (isCruiser) {
                 // We're only tracking one cruiser per team in our map. Don't spawn more...0_o!
