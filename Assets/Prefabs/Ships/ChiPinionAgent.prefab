@@ -456,7 +456,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_LocalPosition.y
@@ -464,7 +464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -566
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bf7f83a621f95fd41aa03e6af1162137, type: 3}
       propertyPath: m_LocalRotation.w
@@ -984,7 +984,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: d112ee75d4f7de847b4205f0f17ccfcf, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 2
   m_BehaviorName: ShipBrain
