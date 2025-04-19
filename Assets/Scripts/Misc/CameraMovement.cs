@@ -45,8 +45,8 @@ public class CameraMovement : MonoBehaviour
     {
         Vector2 dirs = val.Get<Vector2>();
         Debug.Log(dirs);
+        pitch = -dirs.y;
         yaw = dirs.x;
-        pitch = dirs.y;
     }
 
     private void OnSprint(InputValue val)
