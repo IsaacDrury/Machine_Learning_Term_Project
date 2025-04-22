@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdaf9c9912d35714cab1d2d2aa571e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserExplosion: {fileID: 7664674166405471066, guid: cada67862b4ec194987c6ebed28dc3f2, type: 3}
+  laserExplosion: {fileID: 3054839306187651008, guid: 280b52945a387394b8a57098ac254e6c, type: 3}
   speed: 500
 --- !u!54 &8073548709119948713
 Rigidbody:
