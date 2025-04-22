@@ -7,7 +7,6 @@ namespace Assets.Scripts
     {
         // Explosion prefabs
         [SerializeField] private GameObject laserExplosion;
-        //[SerializeField] private GameObject shipExplosion;
         // Laser speed
         [SerializeField] private int speed;
 
