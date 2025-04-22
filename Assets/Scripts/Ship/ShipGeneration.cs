@@ -54,7 +54,7 @@ public class ShipGeneration : MonoBehaviour
             Debug.Log("S: " + numStrikeShips + " F: " + numFrigates + " C: " + numCruisers);
             randomShipReset(numTeam1Agents, false);
             randomShipReset(numCruisers, true);
-            StartCoroutine(TimeDelay(5.0f));
+            StartCoroutine(TimeDelayAndReset());
             return 0;
         }
 
@@ -74,7 +74,7 @@ public class ShipGeneration : MonoBehaviour
             Debug.Log("S: " + numStrikeShips + " F: " + numFrigates + " C: " + numCruisers);
             randomShipReset(numTeam1Agents, false);
             randomShipReset(numCruisers, true);
-            StartCoroutine(TimeDelay(5.0f));
+            StartCoroutine(TimeDelayAndReset());
             return 0;
         }
         return 0;
@@ -101,6 +101,7 @@ public class ShipGeneration : MonoBehaviour
 
             // Instantiate agent on team 1
             GameObject agent1 = Instantiate(shipAgent);
+            agent1.SetActive(true);
             agent1.tag = "Team 1";
             Renderer[] renderers = agent1.GetComponentsInChildren<Renderer>();
             foreach (Renderer renderer in renderers) 
@@ -119,6 +120,7 @@ public class ShipGeneration : MonoBehaviour
 
             // Instantiate agent on team 2
             GameObject agent2 = Instantiate(shipAgent);
+            agent2.SetActive(true);
             agent2.tag = "Team 2";
             renderers = agent2.GetComponentsInChildren<Renderer>();
             foreach (Renderer renderer in renderers)
@@ -159,22 +161,22 @@ public class ShipGeneration : MonoBehaviour
                 for (int k = 0; k < numShips; k++)
                 {
                     if (Cruiser) {
-                        posX1 = i * 200 + Random.Range(-850, 850);
-                        posX2 = i * 200 + Random.Range(-850, 850);
-                        posY1 = j * 75 + Random.Range(-850, 850);
-                        posY2 = j * 75 + Random.Range(-850, 850);
-                        posZ1 = k + Random.Range(650, 1350);
-                        posZ2 = k + Random.Range(-1350, -650);
+                        posX1 = i * 200 + Random.Range(-650, 650);
+                        posX2 = i * 200 + Random.Range(-650, 650);
+                        posY1 = j * 75 + Random.Range(-650, 650);
+                        posY2 = j * 75 + Random.Range(-650, 650);
+                        posZ1 = k + Random.Range(450, 1150);
+                        posZ2 = k + Random.Range(-1150, -450);
                         shipPos1 = new Vector3(posX1, posY1, posZ1);
                         shipPos2 = new Vector3(posX2, posY2, posZ2);
                     }
                     else {
-                        posX1 = i * 100 + Random.Range(-850, 850);
-                        posX2 = i * 100 + Random.Range(-850, 850);
-                        posY1 = j * 50 + Random.Range(-850, 850);
-                        posY2 = j * 50 + Random.Range(-850, 850);
-                        posZ1 = k * 100 + Random.Range(650, 1350);
-                        posZ2 = k * 100 + Random.Range(-1350, -650);
+                        posX1 = i * 100 + Random.Range(-650, 650);
+                        posX2 = i * 100 + Random.Range(-650, 650);
+                        posY1 = j * 50 + Random.Range(-650, 650);
+                        posY2 = j * 50 + Random.Range(-650, 650);
+                        posZ1 = k * 100 + Random.Range(450, 1150);
+                        posZ2 = k * 100 + Random.Range(-1150, -450);
                         shipPos1 = new Vector3(posX1, posY1, posZ1);
                         shipPos2 = new Vector3(posX2, posY2, posZ2);
                     }
@@ -183,42 +185,49 @@ public class ShipGeneration : MonoBehaviour
         }
     }
 
-    public void randomShipReset(int numShips, bool Cruiser) {
+    public void randomShipReset(int numShips, bool Cruiser)
+    {
         Debug.Log("Resetting ships");
-        
+
         for (int i = 0; i < numShips; i++)
-        {   
+        {
             // Where we at?
             Debug.Log("Index: " + i + " " + Team1Agents.Count + " " + Team2Agents.Count + " " + Cruisers.Count);
 
-            if (Cruiser) {
+            if (Cruiser)
+            {
                 generateRandPos(1, true);
                 Cruisers[i].SetActive(true);
                 // Check the first cruisers tag and reset team-specific variables
-                if (Cruisers[i].tag == "Team 1") {
+                if (Cruisers[i].tag == "Team 1")
+                {
                     Cruisers[i].transform.position = shipPos1;
                     Cruisers[i].transform.Rotate(T1Rotation);
                 }
-                else if (Cruisers[i].tag == "Team 2") {
+                else if (Cruisers[i].tag == "Team 2")
+                {
                     Cruisers[i].transform.position = shipPos2;
                     Cruisers[i].transform.Rotate(T2Rotation);
                 }
 
                 // Check the second cruisers tag and do the same recipe
-                if (Cruisers[i+1].tag == "Team 1") {
-                    Cruisers[i+1].transform.position = shipPos1;
-                    Cruisers[i+1].transform.Rotate(T1Rotation);
+                if (Cruisers[i + 1].tag == "Team 1")
+                {
+                    Cruisers[i + 1].transform.position = shipPos1;
+                    Cruisers[i + 1].transform.Rotate(T1Rotation);
                 }
-                else if (Cruisers[i+1].tag == "Team 2") {
-                    Cruisers[i+1].transform.position = shipPos2;
-                    Cruisers[i+1].transform.Rotate(T2Rotation);
+                else if (Cruisers[i + 1].tag == "Team 2")
+                {
+                    Cruisers[i + 1].transform.position = shipPos2;
+                    Cruisers[i + 1].transform.Rotate(T2Rotation);
                 }
-                Cruisers[i].GetComponent<Rigidbody>().linearVelocity.Set(0,0,0);
-                Cruisers[i].GetComponent<Rigidbody>().angularVelocity.Set(0,0,0);
-                Cruisers[i+1].GetComponent<Rigidbody>().linearVelocity.Set(0,0,0);
-                Cruisers[i+1].GetComponent<Rigidbody>().angularVelocity.Set(0,0,0);
+                Cruisers[i].GetComponent<Rigidbody>().linearVelocity.Set(0, 0, 0);
+                Cruisers[i].GetComponent<Rigidbody>().angularVelocity.Set(0, 0, 0);
+                Cruisers[i + 1].GetComponent<Rigidbody>().linearVelocity.Set(0, 0, 0);
+                Cruisers[i + 1].GetComponent<Rigidbody>().angularVelocity.Set(0, 0, 0);
             }
-            else {
+            else
+            {
                 generateRandPos(1, false);
                 // Wake Up!
                 Team1Agents[i].SetActive(true);
@@ -227,16 +236,60 @@ public class ShipGeneration : MonoBehaviour
                 Team1Agents[i].transform.position = shipPos1;
                 Team2Agents[i].transform.position = shipPos2;
                 // Slow Down!
-                Team1Agents[i].GetComponent<Rigidbody>().linearVelocity.Set(0,0,0);
-                Team2Agents[i].GetComponent<Rigidbody>().linearVelocity.Set(0,0,0);
+                Team1Agents[i].GetComponent<Rigidbody>().linearVelocity.Set(0, 0, 0);
+                Team2Agents[i].GetComponent<Rigidbody>().linearVelocity.Set(0, 0, 0);
                 // Stop twirling!
-                Team1Agents[i].GetComponent<Rigidbody>().angularVelocity.Set(0,0,0);
-                Team2Agents[i].GetComponent<Rigidbody>().angularVelocity.Set(0,0,0);
+                Team1Agents[i].GetComponent<Rigidbody>().angularVelocity.Set(0, 0, 0);
+                Team2Agents[i].GetComponent<Rigidbody>().angularVelocity.Set(0, 0, 0);
                 // Look them in the eye!
                 Team1Agents[i].transform.Rotate(T1Rotation);
                 Team2Agents[i].transform.Rotate(T2Rotation);
             }
         }
+    }
+    private void ResetShips()
+    {
+        UnityEngine.Debug.Log("Resetting all ships...");
+
+        ResetTeam(Team1Agents, T1Rotation);
+        ResetTeam(Team2Agents, T2Rotation);
+        ResetTeam(Cruisers, T1Rotation);  
+
+        CameraCanvas.GetComponent<CameraControl>().GetCams();
+    }
+
+    private void ResetTeam(List<GameObject> ships, Vector3 rotation)
+    {
+        for (int i = 0; i < ships.Count; i++)
+        {
+            if (ships[i] == null) continue;
+
+            bool isCruiser = ships[i].GetComponent<cruiserMovement>() != null;
+            generateRandPos(1, isCruiser);
+            Vector3 newPos = shipPos1;
+
+            ships[i].transform.position = newPos;
+            ships[i].transform.rotation = Quaternion.Euler(rotation);
+            ships[i].SetActive(true);
+
+            Rigidbody rb = ships[i].GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+
+            Health hp = ships[i].transform.GetChild(1).GetComponent<Health>();
+            if (hp != null)
+            {
+                hp.ResetHealth();
+            }
+        }
+    }
+    private IEnumerator TimeDelayAndReset()
+    {
+        yield return new WaitForSeconds(5.0f);
+        ResetShips();
     }
 
     void Start()
@@ -248,5 +301,11 @@ public class ShipGeneration : MonoBehaviour
         randomShipSpawn(frigateAgent, numFrigates);
         randomShipSpawn(cruiserAgent, numCruisers);
         CameraCanvas.GetComponent<CameraControl>().GetCams();
+    }
+    public static ShipGeneration Instance;
+
+    void Awake()
+    {
+        Instance = this;
     }
 }

@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa19caee010de2c42af0815587108351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser: {fileID: 7885722811214933104, guid: 6f328b0f9b53125498736e238282a2a1, type: 3}
+  team1Laser: {fileID: 0}
+  team2Laser: {fileID: 0}
   sound: {fileID: 726961004173881082, guid: cada67862b4ec194987c6ebed28dc3f2, type: 3}
   clips: []
   firingPoint: {fileID: 2914005022240064327}
@@ -124,9 +125,7 @@ GameObject:
   - component: {fileID: 5294346745564951129}
   - component: {fileID: 5921069617168192635}
   - component: {fileID: 6129397321601901817}
-  - component: {fileID: 792588228703853867}
   - component: {fileID: 6651713102195564868}
-  - component: {fileID: 2419244128156861341}
   m_Layer: 0
   m_Name: Space_Turret
   m_TagString: Untagged
@@ -312,7 +311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa19caee010de2c42af0815587108351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser: {fileID: 7885722811214933104, guid: 6f328b0f9b53125498736e238282a2a1, type: 3}
+  team1Laser: {fileID: 0}
+  team2Laser: {fileID: 0}
   sound: {fileID: 8040375317552082604}
   clips:
   - {fileID: 8300000, guid: 2c8f4a572ddc9b94cbccb731430b6a1a, type: 3}
@@ -464,39 +464,6 @@ MonoBehaviour:
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
   m_EndVerticalOffset: 180
---- !u!114 &792588228703853867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2634351626198879419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SensorName: Sensor-180Deg
-  m_DetectableTags:
-  - Obstacle
-  - Laser
-  - Agent
-  - Team 1
-  - Team 2
-  m_RaysPerDirection: 8
-  m_MaxRayDegrees: 180
-  m_SphereCastRadius: 0.5
-  m_RayLength: 1000
-  m_RayLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967283
-  m_ObservationStacks: 1
-  m_AlternatingRayOrder: 1
-  m_UseBatchedRaycasts: 0
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
-  m_StartVerticalOffset: 0
-  m_EndVerticalOffset: -180
 --- !u!114 &6651713102195564868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,39 +497,6 @@ MonoBehaviour:
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 0
   m_EndVerticalOffset: 90
---- !u!114 &2419244128156861341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2634351626198879419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SensorName: Sensor-90Deg
-  m_DetectableTags:
-  - Obstacle
-  - Laser
-  - Agent
-  - Team 1
-  - Team 2
-  m_RaysPerDirection: 6
-  m_MaxRayDegrees: 180
-  m_SphereCastRadius: 0.5
-  m_RayLength: 1000
-  m_RayLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967283
-  m_ObservationStacks: 1
-  m_AlternatingRayOrder: 1
-  m_UseBatchedRaycasts: 0
-  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
-  m_StartVerticalOffset: 0
-  m_EndVerticalOffset: -90
 --- !u!1 &2869712154649660837
 GameObject:
   m_ObjectHideFlags: 0

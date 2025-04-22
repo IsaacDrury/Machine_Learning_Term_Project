@@ -10,7 +10,7 @@ public class TurretBrain : Agent
     private float stepCount;
     public RayPerceptionSensorComponent3D sensorFront;
 
-    void Start()
+    void Awake()
     {
         movementScript = this.GetComponent<turretMovement>();
     }

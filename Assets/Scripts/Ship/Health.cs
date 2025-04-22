@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     private int health;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         generatorScript = ShipGenerator.GetComponent<ShipGeneration>();
         health = maxHealth;
@@ -29,7 +29,11 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             this.gameObject.transform.parent.gameObject.SetActive(false);
-            generatorScript.checkReset();
+
+            if (ShipGeneration.Instance != null)
+            {
+                ShipGeneration.Instance.checkReset();
+            }
         }
     }
 

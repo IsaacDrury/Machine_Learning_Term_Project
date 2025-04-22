@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class cruiserMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 50f;
+    [SerializeField] private float speed = 10f;
     [SerializeField] private Rigidbody rBdy;
 
     private Health health;

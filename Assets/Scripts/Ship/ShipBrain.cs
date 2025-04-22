@@ -8,9 +8,11 @@ public class ShipBrain : Agent
     private agentMovement movementScript;
     public float maxSteps = 20000f;
     private float stepCount;
-    public RayPerceptionSensorComponent3D sensorFront;
+    public RayPerceptionSensorComponent3D sensorFront1;
+    public RayPerceptionSensorComponent3D sensorFront2;
 
-    void Start()
+
+    void Awake()
     {
         movementScript = GetComponent<agentMovement>();
     }
@@ -41,23 +43,9 @@ public class ShipBrain : Agent
         float yaw = actionBuffers.ContinuousActions[1];
         movementScript.ApplyMovement(pitch, yaw);
 
-        if (sensorFront != null)
-        {
-            var perception = RayPerceptionSensor.Perceive(sensorFront.GetRayPerceptionInput(), false);
-            if (perception != null && perception.RayOutputs != null)
-            {
-                var rayOutputs = perception.RayOutputs;
-                foreach (var rayOutput in rayOutputs)
-                {
-                    if (rayOutput.HitGameObject != null &&
-                        ((gameObject.CompareTag("Team 1") && rayOutput.HitGameObject.CompareTag("Team 2")) ||
-                         (gameObject.CompareTag("Team 2") && rayOutput.HitGameObject.CompareTag("Team 1"))))
-                    {
-                        AddReward(0.001f);
-                    }
-                }
-            }
-        }
+
+        CheckSensorHits(sensorFront1);
+        CheckSensorHits(sensorFront2);
 
         if (stepCount == maxSteps)
         {
@@ -71,4 +59,25 @@ public class ShipBrain : Agent
         continuousActionsOut[0] = Input.GetAxis("Vertical");   // Pitch (up/down)
         continuousActionsOut[1] = Input.GetAxis("Horizontal"); // Yaw (left/right)
     }
+
+    private void CheckSensorHits(RayPerceptionSensorComponent3D sensor)
+    {
+        if (sensor != null)
+        {
+            var perception = RayPerceptionSensor.Perceive(sensor.GetRayPerceptionInput(), false);
+            if (perception != null && perception.RayOutputs != null)
+            {
+                foreach (var rayOutput in perception.RayOutputs)
+                {
+                    if (rayOutput.HitGameObject != null &&
+                        ((gameObject.CompareTag("Team 1") && rayOutput.HitGameObject.CompareTag("Team 2")) ||
+                         (gameObject.CompareTag("Team 2") && rayOutput.HitGameObject.CompareTag("Team 1"))))
+                    {
+                        AddReward(0.001f);
+                    }
+                }
+            }
+        }
+    }
+
 }

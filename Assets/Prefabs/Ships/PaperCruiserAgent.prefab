@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca88dd8760b9b9a42b2096ceab5d29b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 10
   rBdy: {fileID: -736735561037566192}
 --- !u!96 &2185778087377889086
 TrailRenderer:
@@ -463,6 +463,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1985408105448514563}
     m_Modifications:
+    - target: {fileID: 792588228703853867, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: m_EndVerticalOffset
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2634351626198879419, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
       propertyPath: m_Name
       value: Space_Turret1

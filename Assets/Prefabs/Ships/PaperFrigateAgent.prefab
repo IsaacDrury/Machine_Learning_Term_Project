@@ -52,6 +52,7 @@ Transform:
   - {fileID: 1090701836879051125}
   - {fileID: 3336714735812036115}
   - {fileID: 8163113043429808637}
+  - {fileID: 4967158088347036177}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &-3516572791765885284
@@ -380,7 +381,8 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
   maxSteps: 50000
-  sensorFront: {fileID: -3385597488433976980}
+  sensorFront1: {fileID: 7643023765091520888}
+  sensorFront2: {fileID: 2440661002940399286}
 --- !u!114 &-8833179993334475756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,7 +448,7 @@ MonoBehaviour:
   - Agent
   - Team 1
   - Team 2
-  m_RaysPerDirection: 6
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -479,7 +481,7 @@ MonoBehaviour:
   - Agent
   - Team 1
   - Team 2
-  m_RaysPerDirection: 6
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -512,7 +514,7 @@ MonoBehaviour:
   - Agent
   - Team 1
   - Team 2
-  m_RaysPerDirection: 8
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -545,7 +547,7 @@ MonoBehaviour:
   - Agent
   - Team 1
   - Team 2
-  m_RaysPerDirection: 6
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -578,7 +580,7 @@ MonoBehaviour:
   - Agent
   - Team 1
   - Team 2
-  m_RaysPerDirection: 6
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -876,6 +878,163 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &4464358183442829801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4967158088347036177}
+  m_Layer: 0
+  m_Name: FrontSensors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4967158088347036177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4464358183442829801}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 25.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6543735187312071850}
+  - {fileID: 6277285107730855606}
+  m_Father: {fileID: 1985408105448514563}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6979569684843029359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6277285107730855606}
+  - component: {fileID: 2440661002940399286}
+  m_Layer: 0
+  m_Name: SensorFront2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6277285107730855606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979569684843029359}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4967158088347036177}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &2440661002940399286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979569684843029359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: SensorFront2
+  m_DetectableTags: []
+  m_RaysPerDirection: 5
+  m_MaxRayDegrees: 5
+  m_SphereCastRadius: 0.5
+  m_RayLength: 2000
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  m_AlternatingRayOrder: 1
+  m_UseBatchedRaycasts: 0
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
+--- !u!1 &8230299930932954119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6543735187312071850}
+  - component: {fileID: 7643023765091520888}
+  m_Layer: 0
+  m_Name: SensorFront1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6543735187312071850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8230299930932954119}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4967158088347036177}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7643023765091520888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8230299930932954119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: SensorFront1
+  m_DetectableTags:
+  - Obstacle
+  - Team 1
+  - Team 2
+  - Laser
+  m_RaysPerDirection: 5
+  m_MaxRayDegrees: 5
+  m_SphereCastRadius: 0.5
+  m_RayLength: 2000
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  m_AlternatingRayOrder: 1
+  m_UseBatchedRaycasts: 0
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
 --- !u!1001 &5683109113334108356
 PrefabInstance:
   m_ObjectHideFlags: 0

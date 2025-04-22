@@ -299,6 +299,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb6a0164d5b762846bf0e521d4b9f80c, type: 3}
+--- !u!223 &661454423 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 5107846700814363816, guid: bb6a0164d5b762846bf0e521d4b9f80c, type: 3}
+  m_PrefabInstance: {fileID: 646415682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1063141453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -577,12 +582,15 @@ MonoBehaviour:
   strikeCraftAgent: {fileID: 6367567273121791792, guid: 512d454098b7f0f4ebb9fc1acb8e7948, type: 3}
   frigateAgent: {fileID: 974394742039023951, guid: 67cf92010410c734d97cad7ce7724a17, type: 3}
   cruiserAgent: {fileID: 974394742039023951, guid: 2da7b813aa0d617469096f9ac35eedbd, type: 3}
-  CameraCanvas: {fileID: 0}
-  spawnStrikeShips: 2
-  spawnFrigates: 2
-  spawnCruisers: 1
+  team1Material: {fileID: 2100000, guid: d1c0515ef0b857542b8c05982f1b5546, type: 2}
+  team2Material: {fileID: 2100000, guid: 9cf5111e0e5a85d4992d55262daa77ed, type: 2}
+  trailMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   T1Rotation: {x: 0, y: 180, z: 0}
   T2Rotation: {x: 0, y: 0, z: 0}
+  CameraCanvas: {fileID: 661454423}
+  numStrikeShips: 4
+  numFrigates: 2
+  numCruisers: 1
 --- !u!1001 &1582941471
 PrefabInstance:
   m_ObjectHideFlags: 0
