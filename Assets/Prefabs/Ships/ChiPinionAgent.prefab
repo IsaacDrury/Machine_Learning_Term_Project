@@ -1011,7 +1011,6 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
   - Team 1
   - Team 2
   m_RaysPerDirection: 4
@@ -1044,7 +1043,6 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
   - Team 1
   - Team 2
   m_RaysPerDirection: 4
@@ -1077,7 +1075,6 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
   - Team 1
   - Team 2
   m_RaysPerDirection: 4
@@ -1110,7 +1107,6 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
   - Team 1
   - Team 2
   m_RaysPerDirection: 4
@@ -1143,7 +1139,6 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
   - Team 1
   - Team 2
   m_RaysPerDirection: 4

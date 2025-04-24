@@ -445,7 +445,6 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
   - Team 1
   - Team 2
   m_RaysPerDirection: 4
@@ -478,7 +477,6 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
   - Team 1
   - Team 2
   m_RaysPerDirection: 4
@@ -511,7 +509,6 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
   - Team 1
   - Team 2
   m_RaysPerDirection: 4
@@ -544,7 +541,6 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
   - Team 1
   - Team 2
   m_RaysPerDirection: 4
@@ -577,7 +573,6 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
   - Team 1
   - Team 2
   m_RaysPerDirection: 4
@@ -956,7 +951,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SensorName: SensorFront2
-  m_DetectableTags: []
+  m_DetectableTags:
+  - Obstacle
+  - Team 1
+  - Team 2
+  - Laser
   m_RaysPerDirection: 5
   m_MaxRayDegrees: 5
   m_SphereCastRadius: 0.5

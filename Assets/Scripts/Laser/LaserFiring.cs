@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using Unity.MLAgents;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using System.Diagnostics;
+using System;
 
 namespace Assets.Scripts
 {
@@ -20,18 +23,22 @@ namespace Assets.Scripts
         private RaycastHit hit;
         private bool inCooldown;
         private int index;
-        private ShipBrain agent;
+        private Agent agent;
 
         private void Awake()
         {
             inCooldown = false;
-            agent = this.GetComponent<ShipBrain>();
+            agent = GetComponent<Agent>();
+            if (agent == null)
+            {
+                agent = GetComponentInParent<Agent>();
+            }
         }
 
         private void Update()
         {
             ray = new Ray(firingPoint.position, firingPoint.forward);
-            Debug.DrawRay(ray.origin, ray.direction * 500);
+            UnityEngine.Debug.DrawRay(ray.origin, ray.direction * 500);
             Physics.Raycast(ray, out hit);
             if (hit.collider != null)
             {
@@ -42,7 +49,7 @@ namespace Assets.Scripts
                     if (!inCooldown)
                     {
                         agent.AddReward(10.0f);
-                        Debug.LogWarning("Firing Laser");
+                        UnityEngine.Debug.LogWarning("Firing Laser");
 
                         FireLaser();
                     }
@@ -59,9 +66,16 @@ namespace Assets.Scripts
         // Instantiate laser
         public void FireLaser()
         {
-            index = Random.Range(0, clips.Length);
-            sound.clip = clips[index];
-            sound.Play();
+            if (clips == null || clips.Length == 0)
+            {
+                UnityEngine.Debug.LogWarning($"{name} — No audio clips assigned. Skipping sound.");
+            }
+            else
+            {
+                index = UnityEngine.Random.Range(0, clips.Length);
+                sound.clip = clips[index];
+                sound.Play();
+            }
             inCooldown = true;
             GameObject laserProjectile = null;
             if (this.tag == "Team 1")

@@ -475,6 +475,14 @@ PrefabInstance:
       propertyPath: m_SensorName
       value: SensorEmitterHorizontal
       objectReference: {fileID: 0}
+    - target: {fileID: 3286838753261788874, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: team1Laser
+      value: 
+      objectReference: {fileID: 306718397291104926, guid: a624fd2349f715e4abc487eae6fa774a, type: 3}
+    - target: {fileID: 3286838753261788874, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: team2Laser
+      value: 
+      objectReference: {fileID: 8352568049141835132, guid: aa5daccbd759e7c43a0122123c9416c2, type: 3}
     - target: {fileID: 3442096416426481153, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -515,10 +523,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5294346745564951129, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: m_BehaviorName
+      value: TurretBrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294346745564951129, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: m_BrainParameters.VectorObservationSize
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5603957948203449902, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
       propertyPath: m_SensorName
       value: SensorEmitterVertical
       objectReference: {fileID: 0}
+    - target: {fileID: 7489116213082000777, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: team1Laser
+      value: 
+      objectReference: {fileID: 306718397291104926, guid: a624fd2349f715e4abc487eae6fa774a, type: 3}
+    - target: {fileID: 7489116213082000777, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: team2Laser
+      value: 
+      objectReference: {fileID: 8352568049141835132, guid: aa5daccbd759e7c43a0122123c9416c2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -545,6 +569,14 @@ PrefabInstance:
       propertyPath: m_SensorName
       value: SensorEmitterHorizontal
       objectReference: {fileID: 0}
+    - target: {fileID: 3286838753261788874, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: team1Laser
+      value: 
+      objectReference: {fileID: 306718397291104926, guid: a624fd2349f715e4abc487eae6fa774a, type: 3}
+    - target: {fileID: 3286838753261788874, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: team2Laser
+      value: 
+      objectReference: {fileID: 8352568049141835132, guid: aa5daccbd759e7c43a0122123c9416c2, type: 3}
     - target: {fileID: 3442096416426481153, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -585,10 +617,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5294346745564951129, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: m_BehaviorName
+      value: TurretBrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294346745564951129, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: m_BrainParameters.VectorObservationSize
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5603957948203449902, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
       propertyPath: m_SensorName
       value: SensorEmitterVertical
       objectReference: {fileID: 0}
+    - target: {fileID: 6129397321601901817, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: m_SphereCastRadius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489116213082000777, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: team1Laser
+      value: 
+      objectReference: {fileID: 306718397291104926, guid: a624fd2349f715e4abc487eae6fa774a, type: 3}
+    - target: {fileID: 7489116213082000777, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: team2Laser
+      value: 
+      objectReference: {fileID: 8352568049141835132, guid: aa5daccbd759e7c43a0122123c9416c2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

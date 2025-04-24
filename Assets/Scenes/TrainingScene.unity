@@ -588,8 +588,8 @@ MonoBehaviour:
   T1Rotation: {x: 0, y: 180, z: 0}
   T2Rotation: {x: 0, y: 0, z: 0}
   CameraCanvas: {fileID: 661454423}
-  numStrikeShips: 4
-  numFrigates: 2
+  numStrikeShips: 8
+  numFrigates: 4
   numCruisers: 1
 --- !u!1001 &1582941471
 PrefabInstance:

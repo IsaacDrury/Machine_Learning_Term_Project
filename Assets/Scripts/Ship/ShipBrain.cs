@@ -2,6 +2,7 @@ using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
+using System.Diagnostics;
 
 public class ShipBrain : Agent
 {
@@ -10,7 +11,6 @@ public class ShipBrain : Agent
     private float stepCount;
     public RayPerceptionSensorComponent3D sensorFront1;
     public RayPerceptionSensorComponent3D sensorFront2;
-
 
     void Awake()
     {
@@ -33,8 +33,7 @@ public class ShipBrain : Agent
             AddReward(-6.0f);
 
             // Log to console for debugging
-            Debug.LogWarning("Ship Hit By Something");
-            EndEpisode();
+            UnityEngine.Debug.LogWarning("Ship Hit By Something");
         }
     }
     public override void OnActionReceived(ActionBuffers actionBuffers)

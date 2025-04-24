@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Unity.MLAgents;
 
 namespace Assets.Scripts
 {
@@ -12,7 +13,7 @@ namespace Assets.Scripts
 
         private Transform laserTransform;
         private Rigidbody rb;
-        private ShipBrain parentAgent;
+        private Agent parentAgent;
         private bool hit;
 
         private void Awake()
@@ -53,7 +54,7 @@ namespace Assets.Scripts
             this.GetComponent<Collider>().enabled = true;
         }
 
-        public void SetAgents(ShipBrain agent)
+        public void SetAgents(Agent agent)
         {
             parentAgent = agent;
         }
