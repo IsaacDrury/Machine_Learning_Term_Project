@@ -291,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   team1Laser: {fileID: 306718397291104926, guid: a624fd2349f715e4abc487eae6fa774a, type: 3}
   team2Laser: {fileID: 8352568049141835132, guid: aa5daccbd759e7c43a0122123c9416c2, type: 3}
-  sound: {fileID: 0}
+  sound: {fileID: 3877457416045419695}
   clips:
   - {fileID: 8300000, guid: 2c8f4a572ddc9b94cbccb731430b6a1a, type: 3}
   - {fileID: 8300000, guid: 3862840d2efc1644b9810da1b751ba9c, type: 3}
@@ -314,7 +314,8 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
   maxSteps: 50000
-  sensorFront: {fileID: 0}
+  sensorFront1: {fileID: 0}
+  sensorFront2: {fileID: 0}
 --- !u!114 &-8833179993334475756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,8 +378,9 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
-  m_RaysPerDirection: 6
+  - Team 1
+  - Team 2
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -408,8 +410,9 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
-  m_RaysPerDirection: 6
+  - Team 1
+  - Team 2
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -439,8 +442,9 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
-  m_RaysPerDirection: 8
+  - Team 1
+  - Team 2
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -470,8 +474,9 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
-  m_RaysPerDirection: 6
+  - Team 1
+  - Team 2
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
@@ -501,8 +506,9 @@ MonoBehaviour:
   m_DetectableTags:
   - Obstacle
   - Laser
-  - Agent
-  m_RaysPerDirection: 6
+  - Team 1
+  - Team 2
+  m_RaysPerDirection: 4
   m_MaxRayDegrees: 180
   m_SphereCastRadius: 0.5
   m_RayLength: 1000
