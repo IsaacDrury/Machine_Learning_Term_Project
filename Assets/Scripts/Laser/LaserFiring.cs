@@ -81,6 +81,15 @@ namespace Assets.Scripts
             if (this.tag == "Team 1")
             {
                 laserProjectile = Instantiate(team1Laser, firingPoint.position, firingPoint.rotation);
+                if (this.transform.GetChild(1).GetComponent<Health>().GetShipType() == "Stike-craft")
+                {
+                    laserProjectile.GetComponent<Laser>().SetDamage(1);
+                }
+                else
+                {
+                    laserProjectile.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+                    laserProjectile.GetComponent<Laser>().SetDamage(4);
+                }
             }
             else
             {
