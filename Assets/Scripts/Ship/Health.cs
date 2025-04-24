@@ -30,14 +30,14 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             GameObject ship = this.gameObject.transform.parent.gameObject;
-            //GameObject explosion = Instantiate(shipExplosion, ship.transform.position, ship.transform.rotation);
+            GameObject explosion = Instantiate(shipExplosion, ship.transform.position, ship.transform.rotation);
             if (type == "Frigate")
             {
-                //explosion.transform.localScale = new Vector3(6, 6, 6);
+                explosion.transform.localScale = new Vector3(6, 6, 6);
             }
             else if (type == "Cruiser")
             {
-                //explosion.transform.localScale = new Vector3(36, 36, 36);
+                explosion.transform.localScale = new Vector3(36, 36, 36);
             }
             ship.SetActive(false);
             generatorScript.checkReset();

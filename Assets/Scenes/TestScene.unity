@@ -481,9 +481,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3485396848370539789, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
+      propertyPath: numCruisers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485396848370539789, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
+      propertyPath: numFrigates
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485396848370539789, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
       propertyPath: CameraCanvas
       value: 
       objectReference: {fileID: 214886890}
+    - target: {fileID: 3485396848370539789, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
+      propertyPath: numStrikeShips
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5296442698276390248, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
