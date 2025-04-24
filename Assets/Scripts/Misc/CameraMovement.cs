@@ -3,6 +3,13 @@ using UnityEngine.InputSystem;
 
 public class CameraMovement : MonoBehaviour
 {
+    /*
+     * With keyboard, camera movement uses wasd for up, left, down, and right movement respectively
+     * q and e used to go straight up and down
+     * Use space to activate and deactive control over the main camera
+     * Use the mouse to look (warning this is extremely jank, z axis rotation is not locked despite me setting it to locked in the editor)
+     */
+
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Transform tf;
 
@@ -44,7 +51,6 @@ public class CameraMovement : MonoBehaviour
     private void OnLook(InputValue val)
     {
         Vector2 dirs = val.Get<Vector2>();
-        Debug.Log(dirs);
         pitch = -dirs.y;
         yaw = dirs.x;
     }

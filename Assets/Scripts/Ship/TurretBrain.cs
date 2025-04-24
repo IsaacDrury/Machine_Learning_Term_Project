@@ -16,13 +16,12 @@ public class TurretBrain : Agent
 
     }
 
-    //Currently unused
-    /*
+    
     public override void OnEpisodeBegin()
     {
-
+        this.gameObject.transform.parent.GetComponentInChildren<Health>().ResetHealth();
     }
-    */
+  
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
@@ -32,7 +31,7 @@ public class TurretBrain : Agent
 
         if (stepCount == maxSteps)
         {
-            EndEpisode();
+            this.gameObject.transform.parent.gameObject.SetActive(false);
         }
         stepCount++;
     }

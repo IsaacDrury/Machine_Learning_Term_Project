@@ -17,20 +17,19 @@ public class ShipBrain : Agent
         movementScript = GetComponent<agentMovement>();
     }
 
-    //Currently unused
-    /*
+    
     public override void OnEpisodeBegin()
     {
-
+        this.gameObject.GetComponentInChildren<Health>().ResetHealth();
     }
-    */
+    
 
     private void OnCollisionEnter (Collision collision)
     {
         if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Laser") || collision.gameObject.CompareTag("Team 1") || collision.gameObject.CompareTag("Team 2"))
         {
             // Add a negative reward for hitting big space rock
-            AddReward(-6.0f);
+            AddReward(-20.0f);
 
             // Log to console for debugging
             UnityEngine.Debug.LogWarning("Ship Hit By Something");
@@ -48,9 +47,10 @@ public class ShipBrain : Agent
 
         if (stepCount == maxSteps)
         {
-            EndEpisode();
+            this.gameObject.SetActive(false);
         }
         stepCount++;
+        AddReward(-0.01f);
     }
     public override void Heuristic(in ActionBuffers actionsOut)
     {
@@ -72,7 +72,7 @@ public class ShipBrain : Agent
                         ((gameObject.CompareTag("Team 1") && rayOutput.HitGameObject.CompareTag("Team 2")) ||
                          (gameObject.CompareTag("Team 2") && rayOutput.HitGameObject.CompareTag("Team 1"))))
                     {
-                        AddReward(0.001f);
+                        AddReward(0.1f);
                     }
                 }
             }

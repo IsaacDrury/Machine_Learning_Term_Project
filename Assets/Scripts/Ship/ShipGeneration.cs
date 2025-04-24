@@ -13,9 +13,12 @@ public class ShipGeneration : MonoBehaviour
     [SerializeField] private List<GameObject> Cruisers;
 
     // Ship prefabs
-    [SerializeField] private GameObject strikeCraftAgent;
-    [SerializeField] private GameObject frigateAgent;
-    [SerializeField] private GameObject cruiserAgent;
+    [SerializeField] private GameObject strikeCraftAgent1;
+    [SerializeField] private GameObject frigateAgent1;
+    [SerializeField] private GameObject cruiserAgent1;
+    [SerializeField] private GameObject strikeCraftAgent2;
+    [SerializeField] private GameObject frigateAgent2;
+    [SerializeField] private GameObject cruiserAgent2;
 
     // Team specific values
     [SerializeField] private Material team1Material;
@@ -92,12 +95,12 @@ public class ShipGeneration : MonoBehaviour
         UnityEngine.Debug.Log( delay + " seconds.");
     }
 
-    private void randomShipSpawn(GameObject shipAgent, int numShips) {
+    private void randomShipSpawn(GameObject shipAgent1, GameObject shipAgent2, int numShips) {
         UnityEngine.Debug.Log("Spawning for da first time!");
 
         for (int i = 0; i < numShips; i++)
         {
-            if (shipAgent.gameObject.transform.GetChild(1).GetComponent<Health>().GetShipType() == "Cruiser") {
+            if (shipAgent1.gameObject.transform.GetChild(1).GetComponent<Health>().GetShipType() == "Cruiser") {
 
                 isCruiser = true;
                 generateRandPos(1, isCruiser);
@@ -107,7 +110,7 @@ public class ShipGeneration : MonoBehaviour
             }
 
             // Instantiate agent on team 1
-            GameObject agent1 = Instantiate(shipAgent);
+            GameObject agent1 = Instantiate(shipAgent1);
             agent1.SetActive(true);
             agent1.tag = "Team 1";
             Renderer[] renderers = agent1.GetComponentsInChildren<Renderer>();
@@ -126,7 +129,7 @@ public class ShipGeneration : MonoBehaviour
             agent1.GetComponent<TrailRenderer>().endColor = Color.white;
 
             // Instantiate agent on team 2
-            GameObject agent2 = Instantiate(shipAgent);
+            GameObject agent2 = Instantiate(shipAgent2);
             agent2.SetActive(true);
             agent2.tag = "Team 2";
             renderers = agent2.GetComponentsInChildren<Renderer>();
@@ -288,9 +291,9 @@ public class ShipGeneration : MonoBehaviour
 
     void Start()
     {
-        randomShipSpawn(strikeCraftAgent, numStrikeShips);
-        randomShipSpawn(frigateAgent, numFrigates);
-        randomShipSpawn(cruiserAgent, numCruisers);
+        randomShipSpawn(strikeCraftAgent1, strikeCraftAgent2, numStrikeShips);
+        randomShipSpawn(frigateAgent1, frigateAgent2, numFrigates);
+        randomShipSpawn(cruiserAgent1, cruiserAgent2, numCruisers);
         CameraCanvas.GetComponent<CameraControl>().GetCams();
     }
     public static ShipGeneration Instance;

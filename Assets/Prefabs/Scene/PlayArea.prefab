@@ -31,6 +31,7 @@ Transform:
   m_Children:
   - {fileID: 799880015675789089}
   - {fileID: 6062861735672662766}
+  - {fileID: 8272655419230237633}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1851036239389020632
@@ -188,4 +189,102 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3202076772848774165, guid: abe678dd5f523774289e3f10d3f676c8, type: 3}
   m_PrefabInstance: {fileID: 2839996198656680756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8810176744775071159
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5296442698276390248}
+    m_Modifications:
+    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608369227547484380, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: m_Name
+      value: ShipGenerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: numCruisers
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: numFrigates
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: cruiserAgent1
+      value: 
+      objectReference: {fileID: 974394742039023951, guid: 35ddcf110547d8642942e46cbc0db425, type: 3}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: cruiserAgent2
+      value: 
+      objectReference: {fileID: 974394742039023951, guid: b3cadcbfb01b46b47ad5a410c6a00ea0, type: 3}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: frigateAgent1
+      value: 
+      objectReference: {fileID: 974394742039023951, guid: b5596e33a1646d54fbcd06a6cd223493, type: 3}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: frigateAgent2
+      value: 
+      objectReference: {fileID: 974394742039023951, guid: 67cf92010410c734d97cad7ce7724a17, type: 3}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: numStrikeShips
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: strikeCraftAgent1
+      value: 
+      objectReference: {fileID: 6367567273121791792, guid: 512d454098b7f0f4ebb9fc1acb8e7948, type: 3}
+    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+      propertyPath: strikeCraftAgent2
+      value: 
+      objectReference: {fileID: 974394742039023951, guid: 3fe0fc0bb46a4e44dba38d634af5dbf5, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+--- !u!4 &8272655419230237633 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
+  m_PrefabInstance: {fileID: 8810176744775071159}
   m_PrefabAsset: {fileID: 0}

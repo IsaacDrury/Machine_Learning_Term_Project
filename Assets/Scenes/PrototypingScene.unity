@@ -143,6 +143,10 @@ PrefabInstance:
       propertyPath: warningFilter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3485396848370539789, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
+      propertyPath: CameraCanvas
+      value: 
+      objectReference: {fileID: 1232047561}
     - target: {fileID: 4783171944246441984, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
       propertyPath: warningMsg
       value: 
@@ -225,17 +229,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5296442698276390248, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1166762544}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
---- !u!4 &468684719 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5296442698276390248, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
-  m_PrefabInstance: {fileID: 468684718}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,116 +360,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1166762543
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 468684719}
-    m_Modifications:
-    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1608369227547484380, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: m_Name
-      value: ShipGenerator
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: numCruisers
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: numFrigates
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: CameraCanvas
-      value: 
-      objectReference: {fileID: 1232047561}
-    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: T1Rotation.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: T2Rotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: cruiserAgent
-      value: 
-      objectReference: {fileID: 974394742039023951, guid: 2da7b813aa0d617469096f9ac35eedbd, type: 3}
-    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: frigateAgent
-      value: 
-      objectReference: {fileID: 974394742039023951, guid: 67cf92010410c734d97cad7ce7724a17, type: 3}
-    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: spawnCruisers
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: spawnFrigates
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: numStrikeShips
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: spawnStrikeShips
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5339744022302681274, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-      propertyPath: strikeCraftAgent
-      value: 
-      objectReference: {fileID: 6367567273121791792, guid: 512d454098b7f0f4ebb9fc1acb8e7948, type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
---- !u!4 &1166762544 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 615420124909012598, guid: 1990ca9b24a65594abd8b919e09c18c4, type: 3}
-  m_PrefabInstance: {fileID: 1166762543}
-  m_PrefabAsset: {fileID: 0}
 --- !u!223 &1232047561 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 5107846700814363816, guid: bb6a0164d5b762846bf0e521d4b9f80c, type: 3}

@@ -15,6 +15,7 @@ namespace Assets.Scripts
         private Rigidbody rb;
         private Agent parentAgent;
         private bool hit;
+        private int laserDamage;
 
         private void Awake()
         {
@@ -38,7 +39,7 @@ namespace Assets.Scripts
                 hit = true;
                 parentAgent.AddReward(20.0f);
                 Instantiate(laserExplosion, laserTransform.position, laserTransform.rotation);
-                target.transform.GetChild(1).GetComponent<Health>().ChangeHealth(1);
+                target.transform.GetChild(1).GetComponent<Health>().ChangeHealth(laserDamage);
                 Destroy(this.gameObject);
 
             }
@@ -57,6 +58,11 @@ namespace Assets.Scripts
         public void SetAgents(Agent agent)
         {
             parentAgent = agent;
+        }
+
+        public void SetDamage(int damage)
+        {
+            laserDamage = damage;
         }
     }
 }
