@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7502171728820869310}
   - component: {fileID: 6663593287692808536}
   - component: {fileID: 1986577312051601283}
-  - component: {fileID: 7489116213082000777}
   m_Layer: 0
   m_Name: SentrySupport
   m_TagString: Untagged
@@ -88,24 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7489116213082000777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723323592396350632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa19caee010de2c42af0815587108351, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  team1Laser: {fileID: 0}
-  team2Laser: {fileID: 0}
-  sound: {fileID: 726961004173881082, guid: cada67862b4ec194987c6ebed28dc3f2, type: 3}
-  clips: []
-  firingPoint: {fileID: 2914005022240064327}
-  delay: 1
 --- !u!1 &2634351626198879419
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,8 +292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa19caee010de2c42af0815587108351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team1Laser: {fileID: 0}
-  team2Laser: {fileID: 0}
+  team1Laser: {fileID: 306718397291104926, guid: a624fd2349f715e4abc487eae6fa774a, type: 3}
+  team2Laser: {fileID: 8352568049141835132, guid: aa5daccbd759e7c43a0122123c9416c2, type: 3}
   sound: {fileID: 8040375317552082604}
   clips:
   - {fileID: 8300000, guid: 2c8f4a572ddc9b94cbccb731430b6a1a, type: 3}
@@ -351,7 +332,6 @@ MonoBehaviour:
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
   maxSteps: 50000
-  sensorFront: {fileID: 5603957948203449902}
 --- !u!114 &3997178874968454549
 MonoBehaviour:
   m_ObjectHideFlags: 0
