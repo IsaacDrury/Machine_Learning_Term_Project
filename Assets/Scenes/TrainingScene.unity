@@ -390,6 +390,10 @@ PrefabInstance:
       propertyPath: warningFilter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3485396848370539789, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
+      propertyPath: CameraCanvas
+      value: 
+      objectReference: {fileID: 661454423}
     - target: {fileID: 4783171944246441984, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
       propertyPath: warningMsg
       value: 
@@ -472,17 +476,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5296442698276390248, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1554184226}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
---- !u!4 &1361912292 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5296442698276390248, guid: c83bc11d45eeb264894ea7a007a4d29e, type: 3}
-  m_PrefabInstance: {fileID: 1361912291}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1514294450
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,65 +528,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1554184225
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1554184226}
-  - component: {fileID: 1554184227}
-  m_Layer: 0
-  m_Name: ShipGenerator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1554184226
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554184225}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1361912292}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1554184227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554184225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0c4748a6b78dbf4687e49353a624771, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Team1Agents: []
-  Team2Agents: []
-  Cruisers: []
-  strikeCraftAgent: {fileID: 6367567273121791792, guid: 512d454098b7f0f4ebb9fc1acb8e7948, type: 3}
-  frigateAgent: {fileID: 974394742039023951, guid: 67cf92010410c734d97cad7ce7724a17, type: 3}
-  cruiserAgent: {fileID: 974394742039023951, guid: 2da7b813aa0d617469096f9ac35eedbd, type: 3}
-  team1Material: {fileID: 2100000, guid: d1c0515ef0b857542b8c05982f1b5546, type: 2}
-  team2Material: {fileID: 2100000, guid: 9cf5111e0e5a85d4992d55262daa77ed, type: 2}
-  trailMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  T1Rotation: {x: 0, y: 180, z: 0}
-  T2Rotation: {x: 0, y: 0, z: 0}
-  CameraCanvas: {fileID: 661454423}
-  numStrikeShips: 8
-  numFrigates: 4
-  numCruisers: 1
 --- !u!1001 &1582941471
 PrefabInstance:
   m_ObjectHideFlags: 0

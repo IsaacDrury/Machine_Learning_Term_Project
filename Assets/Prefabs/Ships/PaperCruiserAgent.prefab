@@ -37,7 +37,6 @@ Transform:
   m_Children:
   - {fileID: 6577373691161672110}
   - {fileID: 1090701836879051125}
-  - {fileID: 3336714735812036115}
   - {fileID: 6486324442815393509}
   - {fileID: 3198380813246509715}
   - {fileID: 1001874004495582843}
@@ -287,37 +286,6 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!1 &1432089222581915264
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3336714735812036115}
-  m_Layer: 0
-  m_Name: FiringPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3336714735812036115
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1432089222581915264}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9, z: 216}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1985408105448514563}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2496585892315295314
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +503,42 @@ PrefabInstance:
       propertyPath: m_SensorName
       value: SensorEmitterVertical
       objectReference: {fileID: 0}
+    - target: {fileID: 5921069617168192635, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921069617168192635, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: 'm_DetectableTags.Array.data[2]'
+      value: Team 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921069617168192635, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: 'm_DetectableTags.Array.data[3]'
+      value: Team 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129397321601901817, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129397321601901817, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: 'm_DetectableTags.Array.data[2]'
+      value: Team 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129397321601901817, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: 'm_DetectableTags.Array.data[3]'
+      value: Team 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651713102195564868, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651713102195564868, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: 'm_DetectableTags.Array.data[2]'
+      value: Team 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651713102195564868, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: 'm_DetectableTags.Array.data[3]'
+      value: Team 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7489116213082000777, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
       propertyPath: team1Laser
       value: 
@@ -629,9 +633,45 @@ PrefabInstance:
       propertyPath: m_SensorName
       value: SensorEmitterVertical
       objectReference: {fileID: 0}
+    - target: {fileID: 5921069617168192635, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921069617168192635, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: 'm_DetectableTags.Array.data[2]'
+      value: Team 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5921069617168192635, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: 'm_DetectableTags.Array.data[3]'
+      value: Team 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6129397321601901817, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
       propertyPath: m_SphereCastRadius
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129397321601901817, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129397321601901817, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: 'm_DetectableTags.Array.data[2]'
+      value: Team 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129397321601901817, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: 'm_DetectableTags.Array.data[3]'
+      value: Team 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651713102195564868, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651713102195564868, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: 'm_DetectableTags.Array.data[2]'
+      value: Team 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651713102195564868, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
+      propertyPath: 'm_DetectableTags.Array.data[3]'
+      value: Team 2
       objectReference: {fileID: 0}
     - target: {fileID: 7489116213082000777, guid: 16c0afbc660ff8741bac009d194ef4f5, type: 3}
       propertyPath: team1Laser
